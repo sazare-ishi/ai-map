@@ -25,7 +25,9 @@
 
 ## 構成
 - `data/weeks/YYYY-MM-DD.json` 週次データ(表示と分けて保存)
-- `docs/index.html` 公開ページ(GitHub Pages、`main` の `/docs`)
+- `docs/index.html` 公開ページ「今週の変化」(GitHub Pages、`main` の `/docs`)。毎週更新するのはこのページだけ。
+- `docs/zukan-video.html` `docs/zukan-slides.html` `docs/tips.html` サービス図鑑とヒント。週次では更新しない(サービス追加時に別途更新)。
+- 全ページの先頭に同じメニュー(`<nav>`: 今週の変化 / サービス図鑑 / ヒント)がある。`index.html` を書き直すときも、このメニューを必ず残す。
 
 ## 毎週の手順
 1. 先週から今週までの、主要なAI・Webサービスの変化を調べる。役割別に分ける(調べる/作る/整理する/代わりに動く)。
