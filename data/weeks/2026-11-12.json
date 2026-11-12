@@ -1,0 +1,87 @@
+{
+  "week": "2026-11-12",
+  "period": "2026-11-05〜2026-11-12(11月4日以降の発表を含む)",
+  "headline": "今週は、AIが「見る・答える」から「代わりに動く」へ寄っていく動きが目立ちました。ただし公式ページで確認できたのはMicrosoft 365 Copilot関連だけで、他は単独報道です。",
+  "headline_changed": false,
+  "items": [
+    {
+      "id": "m365-copilot-release-notes",
+      "role": "整理する",
+      "service": "Microsoft 365 Copilot",
+      "title": "SharePointリストをプロンプトから作成、Excelで変更箇所へ移動など(11/4更新分)",
+      "summary": "リリースノートの2026年11月4日の節に、SharePoint リスト エージェント(プロンプトからMicrosoft Listsを作成)、Excelの応答から変更箇所へ移動、PowerPointで添付デッキのスタイルを参照して新規作成、などが載っています。",
+      "confidence": "公式ページ",
+      "japan": "ページ上に日本向け提供の明記は確認できませんでした(日本語ページは機械翻訳と表示)。",
+      "links": [{"label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)", "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"}]
+    },
+    {
+      "id": "copilot-cowork-edge",
+      "role": "代わりに動く",
+      "service": "Copilot Cowork(Microsoft 365 Copilot)",
+      "title": "ローカルのMicrosoft Edgeを使って、Web上の手順を実行できるように",
+      "summary": "既存のサインイン状態のままローカルEdgeで操作を進められる、とリリースノートに記載があります。",
+      "confidence": "公式ページ",
+      "japan": "ページ上に日本向け提供の明記は確認できませんでした。",
+      "links": [{"label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)", "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"}]
+    },
+    {
+      "id": "edge-copilot-newtab",
+      "role": "調べる",
+      "service": "Microsoft Edge",
+      "title": "Copilotの新しいタブページ(検索・チャット・Web探索を1つの検索ボックスに)",
+      "summary": "リリースノートに掲載。窓の杜は10月19日に、2026年11月にも一般展開とロードマップ上の予定を報じていました。設定で有効化する方式で、既定は無効と報じられています。",
+      "confidence": "公式ページ",
+      "japan": "日本向け提供の明記は確認できませんでした。",
+      "links": [
+        {"label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)", "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"},
+        {"label": "窓の杜(2026-10-19)", "url": "https://forest.watch.impress.co.jp/docs/news/2149223.html"}
+      ]
+    }
+  ],
+  "unconfirmed_single_source": [
+    {
+      "id": "businesses-in-chatgpt",
+      "role": "代わりに動く",
+      "service": "ChatGPT",
+      "title": "事業者向け「Businesses in ChatGPT」β版",
+      "summary": "AI Watch(2026-11-11)によると、事業者が「Business Hub」で自社情報を管理し、ChatGPT上での参照回数などを集計で見られ、自社の「ビジネスエージェント」を作って公開できるとのこと。",
+      "confidence": "単独報道",
+      "japan": "AI Watchは「日本を含む提供地域でリリース」と報じる一方、別の集約サイトはエージェントの公開は米国の一部事業者に限ると記しており、範囲の書き方が食い違っています。OpenAIの公式ページは取得できず、確認できていません。",
+      "links": [{"label": "AI Watch(2026-11-11)", "url": "https://ai.watch.impress.co.jp/docs/news/2155604.html"}]
+    },
+    {
+      "id": "gemini-task-automation-japan",
+      "role": "代わりに動く",
+      "service": "Gemini",
+      "title": "Geminiのタスク自動化(食事注文・配車・予約の代行)の提供地域に日本が追加",
+      "summary": "報じているのは個人運営のガジェットサイト1件のみ(リンクは載せません)。Google公式ブログは取得できず、確認できていません。",
+      "confidence": "単独報道",
+      "japan": "報道では日本を含むとされていますが、公式では未確認です。",
+      "links": []
+    },
+    {
+      "id": "claude-sheets-whiteboards",
+      "role": "整理する",
+      "service": "Claude",
+      "title": "Claude SheetsとWhiteboardsがベータ、全有料プラン対象",
+      "summary": "報じているのは小規模メディア1件のみ(リンクは載せません)。Anthropic公式ページは取得できず、確認できていません。日本での提供は記事に記載がありません。",
+      "confidence": "単独報道",
+      "japan": "記載なし。",
+      "links": []
+    },
+    {
+      "id": "chatgpt-images-2-6",
+      "role": "作る",
+      "service": "ChatGPT",
+      "title": "画像生成「Images 2.6」(11/4)",
+      "summary": "編集時のディテール保持の改善、ループGIF作成などとされています。確認できたのはリリースノートを集約した第三者サイト1件のみ(リンクは載せません)。OpenAI公式ページは取得できていません。",
+      "confidence": "単独報道",
+      "japan": "記載なし。",
+      "links": []
+    }
+  ],
+  "unverified": [
+    "検索結果に「Gemini 4 Carbon」「GPT-6.1 Terra」などのモデル名を挙げる記事がありましたが、本文を取得できた信頼できる情報源がなく、内容は未確認です。次回以降に検証します。"
+  ],
+  "fetch_limits": "今回、openai.com / anthropic.com / blog.google は取得許可がなく読めませんでした。このため該当サービスの公式確認ができていません。"
+}
