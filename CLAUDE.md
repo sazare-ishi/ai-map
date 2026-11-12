@@ -30,6 +30,7 @@
 ## 毎週の手順
 1. 先週から今週までの、主要なAI・Webサービスの変化を調べる。役割別に分ける(調べる/作る/整理する/代わりに動く)。
 2. 公式ページで確認し、確度ラベルを付ける。取得できなければ、そう書く。
+   - 公式ドメイン(openai.com / help.openai.com / blog.google / anthropic.com / support.claude.com / platform.claude.com など)は、WebFetch ではなく、ドメインを指定した検索(WebSearch の allowed_domains)で内容を確認する。それでも読めなかったときだけ「確認できなかった」と書く。
 3. `data/weeks/` に週次データを書く。
 4. `docs/index.html` を、データから更新する。
 5. `main` に commit して push する。
