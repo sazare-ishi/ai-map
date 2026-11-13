@@ -100,7 +100,7 @@ for it in info:
       +'</div></body></html>')
     open(os.path.join(ROOT,it['file']),'w',encoding='utf-8').write(h+body)
 # sitemap
-urls=[BASE]+[BASE+x for x in ['zukan-video.html','zukan-slides.html','zukan-ai.html','zukan-agent.html','zukan-link.html','start7.html','setup.html','templates.html','checklist.html','tips.html']]+[BASE+it['file'] for it in info]
+urls=[BASE]+[BASE+x for x in ['zukan-video.html','zukan-slides.html','zukan-ai.html','zukan-agent.html','zukan-image.html','zukan-organize.html','zukan-link.html','start7.html','setup.html','templates.html','checklist.html','tips.html']]+[BASE+it['file'] for it in info]
 open(os.path.join(ROOT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('<url><loc>%s</loc></url>\n'%u for u in urls)+'</urlset>\n')
 open(os.path.join(ROOT,'robots.txt'),'w').write('User-agent: *\nAllow: /\nSitemap: %ssitemap.xml\n'%BASE)
 print(len(info),'pairs')
