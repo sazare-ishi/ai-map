@@ -50,7 +50,6 @@ for it in info:
     body=(wrap+'<div style="font-size:13px;line-height:1.7"><a href="zukan-link.html" style="color:#2d5f94;border-bottom:0.5px solid #9db9d9;text-decoration:none">← 連携チェックの一覧へ</a></div>'
       +it['card'].replace('margin-top: 26px','margin-top: 16px',1)
       +'<div style="margin-top:18px;background:#f3f7fb;border-left:2px solid #5b8fc9;padding:12px 16px;font-size:13px;line-height:1.7">分からないときは、自分のAIに確認元の公式ページを読ませて、「公式ページに書かれていないことは、書かれていないと答えて」と頼んでみてください。判定は、サービス側の公式ページに書かれていることで決めています。書かれていない=できない、ではありません。料金・機能は変わるので、最後は公式ページで確認してください。</div>'
-      +'<div style="margin-top:26px;font-size:13px;color:#64717a">同じAI・同じサービスの、ほかの連携</div>'+rel
       +'<div style="margin-top:32px;display:flex;gap:10px"><a href="zukan-link.html" style="flex:1 1 0;text-align:center;padding:12px 8px;font-size:14px;line-height:1.5;color:#2d5f94;background:#eef4fb;border:0.5px solid #9db9d9;border-radius:4px;text-decoration:none">ほかの連携も見る</a><a href="index.html" style="flex:1 1 0;text-align:center;padding:12px 8px;font-size:14px;line-height:1.5;color:#1f2a30;background:#fff;border:0.5px solid #c9d0d3;border-radius:4px;text-decoration:none">AIマップのトップへ</a></div>'
       +'</div></body></html>')
     open(os.path.join(ROOT,it['file']),'w',encoding='utf-8').write(h+body)
