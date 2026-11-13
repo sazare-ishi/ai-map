@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sazare-ishi.github.io/ai-map/sitemap.xml
