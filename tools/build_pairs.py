@@ -80,7 +80,7 @@ LINK='<a href="%s" style="font-size:13px;color:#2d5f94;border-bottom:0.5px solid
 out=[];p=0
 for (i,e,c),it in zip(cards,info):
     new=it['card']; k=new.rindex('</div>')
-    new=new[:k]+M1+'<div style="margin-top: 12px">'+LINK%it['file']+'</div>'+M2+new[k:]
+    new=new[:k]+M1+'<div style="margin-top: 12px">'+LINK%it['file']+'<div style="margin-top:4px;font-size:12px;line-height:1.7;color:#64717a">別ページで開くと、この連携だけのURLになるので、人に送って共有しやすくなります。</div></div>'+M2+new[k:]
     out.append(src[p:i]);out.append(new);p=e
 out.append(src[p:]);open(os.path.join(ROOT,'zukan-link.html'),'w',encoding='utf-8').write(''.join(out))
 # 個別ページ
