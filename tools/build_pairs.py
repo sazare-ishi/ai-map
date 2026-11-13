@@ -75,7 +75,7 @@ for i,e,c in cards:
     ai,svc=attr(c[:200],'data-ai'),attr(c[:200],'data-svc').split()[0]
     name=html.unescape(re.sub('<.*?>','',re.search(r'color: #1f2a30">(.*?)</div>',c).group(1)))
     info.append(dict(ai=ai,svc=svc,name=name,card=c,file='link-%s-%s.html'%(ai,svc)))
-LINK='<a href="%s" style="font-size:13px;color:#2d5f94;border-bottom:0.5px solid #9db9d9;text-decoration:none">この組だけのページ</a>'
+LINK='<a href="%s" style="font-size:13px;color:#2d5f94;border-bottom:0.5px solid #9db9d9;text-decoration:none">この連携だけを別ページで見る</a>'
 # 一覧側にリンクを足す(作り直し可能)
 out=[];p=0
 for (i,e,c),it in zip(cards,info):
