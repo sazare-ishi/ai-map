@@ -8,50 +8,53 @@
    "id": "m365-copilot-release-notes",
    "role": "整理する",
    "service": "Microsoft 365 Copilot",
-   "title": "SharePointリストをプロンプトから作成、Excelで変更箇所へ移動など(11/4更新分)",
-   "summary": "リリースノートの2026年11月4日の節に、SharePoint リスト エージェント(プロンプトからMicrosoft Listsを作成)、Excelの応答から変更箇所へ移動、PowerPointで添付デッキのスタイルを参照して新規作成、などが載っています。",
+   "title": "文章で頼むだけで、SharePointのリスト(表)が作れるように",
+   "summary": "Microsoft 365 Copilot に「SharePoint リスト エージェント」が加わりました。作りたい表の内容を文章で伝えると、列の構成などをAIが組み立てて、Microsoft Lists(表で情報を管理する機能)として作ります。",
    "confidence": "公式ページ",
-   "japan": "ページ上に日本向け提供の明記は確認できませんでした(日本語ページは機械翻訳と表示)。",
+   "japan": "ページに日本での提供の記載は見つかりませんでした(英語のページで確認)。",
    "links": [
     {
-     "label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)",
-     "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"
+     "label": "Microsoft 365 Copilot のリリースノート(Microsoft Learn・英語)",
+     "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes"
     }
-   ]
+   ],
+   "view": "表を作る前の「どんな列が要るか」の設計を、AIに任せられるのが変化です。Microsoft 365 Copilot の機能として載っているので、使えるのはその環境の人です。比べられる他社の情報は、今回は確認できていません。"
   },
   {
    "id": "copilot-cowork-edge",
    "role": "代わりに動く",
    "service": "Copilot Cowork(Microsoft 365 Copilot)",
-   "title": "ローカルのMicrosoft Edgeを使って、Web上の手順を実行できるように",
-   "summary": "既存のサインイン状態のままローカルEdgeで操作を進められる、とリリースノートに記載があります。",
+   "title": "Copilot Cowork が、自分のEdgeでログイン済みのサイトを操作できるように",
+   "summary": "Copilot Cowork(Microsoft 365 Copilot の「代わりに動く」機能)が、ブラウザが必要な作業で、自分のパソコンのMicrosoft Edgeを使えるようになりました。ログイン済みのサイトでも、自分と同じ権限で、ページを開く・情報を集める・フォームに入力する、といった操作をします。作業は別のEdgeタブで進み、会話で様子を見られます。入力や承認が必要なときは、確認が入ります。パスワードやセッションの情報は、自分の端末に残ります。条件として、Edgeのインストールが必要で、Microsoft 365 Copilot の組織(テナント)向けに提供、と書かれています。",
    "confidence": "公式ページ",
-   "japan": "ページ上に日本向け提供の明記は確認できませんでした。",
+   "japan": "ページに日本での提供の記載は見つかりませんでした(英語のページで確認)。",
    "links": [
     {
-     "label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)",
-     "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"
+     "label": "Microsoft 365 Copilot のリリースノート(Microsoft Learn・英語)",
+     "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes"
+    },
+    {
+     "label": "What's new in Copilot Cowork(Microsoft Learn・英語)",
+     "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new"
     }
-   ]
+   ],
+   "view": "ログイン済みのサイトで、フォームの入力まで任せられるのがポイントです。そのぶん、AIは自分と同じ権限で動くので、お金や個人情報にかかわる操作は、承認の画面で自分が見てから進める使い方になります(<a href=\"checklist.html\" style=\"color:#2d5f94;text-decoration:underline;text-underline-offset:2px\">AIと向き合うために</a>)。ブラウザを代わりに操作する機能は、Claude にも公式の案内ページがありますが、比べられるだけの詳しい情報は、今回は確認できていません。"
   },
   {
    "id": "edge-copilot-newtab",
    "role": "調べる",
    "service": "Microsoft Edge",
-   "title": "Copilotの新しいタブページ(検索・チャット・Web探索を1つの検索ボックスに)",
-   "summary": "リリースノートに掲載。窓の杜は10月19日に、2026年11月にも一般展開とロードマップ上の予定を報じていました。設定で有効化する方式で、既定は無効と報じられています。",
+   "title": "Edgeの新しいタブから、検索もチャットも1つの検索ボックスで",
+   "summary": "Microsoft Edgeの新しいタブページが新しくなり、検索・チャット・Webの探索を、1つの検索ボックスから始められます。Copilotのおすすめの操作や、仕事に関わる内容、ニュースも表示されます。",
    "confidence": "公式ページ",
-   "japan": "日本向け提供の明記は確認できませんでした。",
+   "japan": "ページに日本での提供の記載は見つかりませんでした(英語のページで確認)。",
    "links": [
     {
-     "label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)",
-     "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"
-    },
-    {
-     "label": "窓の杜(2026-10-19)",
-     "url": "https://forest.watch.impress.co.jp/docs/news/2149223.html"
+     "label": "Microsoft 365 Copilot のリリースノート(Microsoft Learn・英語)",
+     "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes"
     }
-   ]
+   ],
+   "view": "調べものと、AIへの質問の入口が1つになるのが変化です。「まず検索」か「まずAIに聞く」かを選ばずに、始められる形になります。比べられる他社の情報は、今回は確認できていません。"
   },
   {
    "id": "businesses-in-chatgpt",
