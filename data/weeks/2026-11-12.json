@@ -1,171 +1,172 @@
 {
-  "week": "2026-11-12",
-  "period": "2026-11-05〜2026-11-12(11月4日以降の発表を含む)",
-  "headline": "今週は、AIが「見る・答える」から「代わりに動く」へ寄っていく動きが目立ちました。先週は単独報道だったChatGPT・Claude・Geminiの項目の多くで、公式ページの存在が確認できました(本文は未読)。",
-  "headline_changed": false,
-  "items": [
+ "week": "2026-11-12",
+ "period": "2026-11-05〜2026-11-12(11月4日以降の発表を含む)",
+ "headline": "今週は、AIが「見る・答える」から「代わりに動く」へ寄っていく動きが目立ちました。先週は単独報道だったChatGPT・Claude・Geminiの項目の多くで、公式ページの存在が確認できました(本文は未読)。",
+ "headline_changed": false,
+ "items": [
+  {
+   "id": "m365-copilot-release-notes",
+   "role": "整理する",
+   "service": "Microsoft 365 Copilot",
+   "title": "SharePointリストをプロンプトから作成、Excelで変更箇所へ移動など(11/4更新分)",
+   "summary": "リリースノートの2026年11月4日の節に、SharePoint リスト エージェント(プロンプトからMicrosoft Listsを作成)、Excelの応答から変更箇所へ移動、PowerPointで添付デッキのスタイルを参照して新規作成、などが載っています。",
+   "confidence": "公式ページ",
+   "japan": "ページ上に日本向け提供の明記は確認できませんでした(日本語ページは機械翻訳と表示)。",
+   "links": [
     {
-      "id": "m365-copilot-release-notes",
-      "role": "整理する",
-      "service": "Microsoft 365 Copilot",
-      "title": "SharePointリストをプロンプトから作成、Excelで変更箇所へ移動など(11/4更新分)",
-      "summary": "リリースノートの2026年11月4日の節に、SharePoint リスト エージェント(プロンプトからMicrosoft Listsを作成)、Excelの応答から変更箇所へ移動、PowerPointで添付デッキのスタイルを参照して新規作成、などが載っています。",
-      "confidence": "公式ページ",
-      "japan": "ページ上に日本向け提供の明記は確認できませんでした(日本語ページは機械翻訳と表示)。",
-      "links": [
-        {
-          "label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)",
-          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"
-        }
-      ]
-    },
-    {
-      "id": "copilot-cowork-edge",
-      "role": "代わりに動く",
-      "service": "Copilot Cowork(Microsoft 365 Copilot)",
-      "title": "ローカルのMicrosoft Edgeを使って、Web上の手順を実行できるように",
-      "summary": "既存のサインイン状態のままローカルEdgeで操作を進められる、とリリースノートに記載があります。",
-      "confidence": "公式ページ",
-      "japan": "ページ上に日本向け提供の明記は確認できませんでした。",
-      "links": [
-        {
-          "label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)",
-          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"
-        }
-      ]
-    },
-    {
-      "id": "edge-copilot-newtab",
-      "role": "調べる",
-      "service": "Microsoft Edge",
-      "title": "Copilotの新しいタブページ(検索・チャット・Web探索を1つの検索ボックスに)",
-      "summary": "リリースノートに掲載。窓の杜は10月19日に、2026年11月にも一般展開とロードマップ上の予定を報じていました。設定で有効化する方式で、既定は無効と報じられています。",
-      "confidence": "公式ページ",
-      "japan": "日本向け提供の明記は確認できませんでした。",
-      "links": [
-        {
-          "label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)",
-          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"
-        },
-        {
-          "label": "窓の杜(2026-10-19)",
-          "url": "https://forest.watch.impress.co.jp/docs/news/2149223.html"
-        }
-      ]
-    },
-    {
-      "id": "businesses-in-chatgpt",
-      "role": "代わりに動く",
-      "service": "ChatGPT",
-      "title": "事業者向け「Businesses in ChatGPT」(β版)",
-      "summary": "OpenAI公式に紹介ページ「Introducing Businesses in ChatGPT」と、設定手順のヘルプ記事があります。AI Watch(11/11)は、事業者が自社情報を管理し、自社のエージェントを公開できると報じていました。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
-      "confidence": "公式ページ",
-      "japan": "報道どうしで提供範囲の書き方が食い違っていました(日本を含むとする報道/エージェント公開は米国の一部事業者に限るとする記載)。公式の本文は読めておらず、日本での提供は確認できていません。",
-      "links": [
-        {
-          "label": "Introducing Businesses in ChatGPT(OpenAI)",
-          "url": "https://openai.com/index/introducing-businesses-chatgpt/"
-        },
-        {
-          "label": "Setting up your business on ChatGPT(OpenAI ヘルプ)",
-          "url": "https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt"
-        },
-        {
-          "label": "AI Watch(2026-11-11)",
-          "url": "https://ai.watch.impress.co.jp/docs/news/2155604.html"
-        }
-      ]
-    },
-    {
-      "id": "claude-sheets-whiteboards",
-      "role": "整理する",
-      "service": "Claude",
-      "title": "Claude Sheets・Claude Whiteboards",
-      "summary": "Anthropic公式に「Claude Whiteboards, Claude Sheets, and Claude Data」の紹介記事と、それぞれの使い始めガイド(サポート記事)があります。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
-      "confidence": "公式ページ",
-      "japan": "確認できていません。",
-      "links": [
-        {
-          "label": "Claude Whiteboards, Claude Sheets, and Claude Data(Claude)",
-          "url": "https://claude.com/resources/articles/sheets-whiteboards-data"
-        },
-        {
-          "label": "Get started with Claude Sheets(Claude サポート)",
-          "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets"
-        },
-        {
-          "label": "Get started with Claude Whiteboards(Claude サポート)",
-          "url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards"
-        }
-      ]
-    },
-    {
-      "id": "chatgpt-images-2-6",
-      "role": "作る",
-      "service": "ChatGPT",
-      "title": "画像生成「ChatGPT Images 2.6」(11/4)",
-      "summary": "OpenAI公式に「Introducing Images 2.6」のページとシステムカードがあります。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。編集時のディテール保持の改善などとする先週の情報は、公式本文では未確認です。",
-      "confidence": "公式ページ",
-      "japan": "確認できていません。",
-      "links": [
-        {
-          "label": "Introducing Images 2.6(OpenAI)",
-          "url": "https://openai.com/index/introducing-images-2-6/"
-        }
-      ]
-    },
-    {
-      "id": "gemini-4-carbon",
-      "role": "調べる",
-      "service": "Gemini",
-      "title": "「Gemini 4 Carbon」の提供開始",
-      "summary": "Google公式の日本語ブログに「Gemini 4 Carbon の提供を開始」と題するページがあります。先週は「未確認」としていた項目です。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
-      "confidence": "公式ページ",
-      "japan": "日本語の公式ブログに掲載されていますが、提供範囲の詳細は本文を読めておらず確認できていません。",
-      "links": [
-        {
-          "label": "Gemini 4 Carbon の提供を開始(Google 公式ブログ)",
-          "url": "https://blog.google/intl/ja-jp/company-news/technology/gemini-4-carbon/"
-        }
-      ]
-    },
-    {
-      "id": "gpt-6-1-terra",
-      "role": "代わりに動く",
-      "service": "ChatGPT / OpenAI",
-      "title": "「GPT-6.1 Terra」",
-      "summary": "OpenAI公式に「Introducing GPT-6.1 Terra」のページがあります。先週は「未確認」としていた項目です。開発者コミュニティの投稿題には「fast and capable computer use」とありますが、公式本文は読めていません。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
-      "confidence": "公式ページ",
-      "japan": "確認できていません。",
-      "links": [
-        {
-          "label": "Introducing GPT-6.1 Terra(OpenAI)",
-          "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
-        }
-      ]
+     "label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)",
+     "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"
     }
-  ],
-  "unconfirmed_single_source": [
+   ]
+  },
+  {
+   "id": "copilot-cowork-edge",
+   "role": "代わりに動く",
+   "service": "Copilot Cowork(Microsoft 365 Copilot)",
+   "title": "ローカルのMicrosoft Edgeを使って、Web上の手順を実行できるように",
+   "summary": "既存のサインイン状態のままローカルEdgeで操作を進められる、とリリースノートに記載があります。",
+   "confidence": "公式ページ",
+   "japan": "ページ上に日本向け提供の明記は確認できませんでした。",
+   "links": [
     {
-      "id": "gemini-task-automation-japan",
-      "role": "代わりに動く",
-      "service": "Gemini",
-      "title": "Geminiのタスク自動化(食事注文・配車・予約の代行)の提供地域に日本が追加",
-      "summary": "「日本が追加された」と報じているのは個人運営のガジェットサイト1件のみ(リンクは載せません)。なお、Google公式には「複数ステップのタスクをGeminiに任せる」機能の英語ページと、日本語の11月Pixel Dropのページがありますが、本文は読めておらず、日本での提供開始は確認できていません。",
-      "confidence": "単独報道",
-      "japan": "日本が含まれるかは、公式の本文では未確認です。",
-      "links": [
-        {
-          "label": "Let Gemini handle your multi-step daily tasks on Android(Google 公式ブログ・英語)",
-          "url": "https://blog.google/innovation-and-ai/products/gemini-app/android-multi-step-tasks/"
-        },
-        {
-          "label": "11月のPixel Drop(Google 公式ブログ)",
-          "url": "https://blog.google/intl/ja-jp/products/devices-services/november-2026-pixel-drop/"
-        }
-      ]
+     "label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)",
+     "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"
     }
-  ],
-  "unverified": [],
-  "fetch_limits": "今回は公式ドメインを指定した検索で確認しました。検索結果はタイトルとURLのみで、openai.com / anthropic.com / blog.google の本文は読めていません。そのため公式の項目でも、機能の詳細や日本での提供範囲は確認できていないものがあります。"
+   ]
+  },
+  {
+   "id": "edge-copilot-newtab",
+   "role": "調べる",
+   "service": "Microsoft Edge",
+   "title": "Copilotの新しいタブページ(検索・チャット・Web探索を1つの検索ボックスに)",
+   "summary": "リリースノートに掲載。窓の杜は10月19日に、2026年11月にも一般展開とロードマップ上の予定を報じていました。設定で有効化する方式で、既定は無効と報じられています。",
+   "confidence": "公式ページ",
+   "japan": "日本向け提供の明記は確認できませんでした。",
+   "links": [
+    {
+     "label": "Microsoft 365 Copilot のリリース ノート(Microsoft Learn)",
+     "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes"
+    },
+    {
+     "label": "窓の杜(2026-10-19)",
+     "url": "https://forest.watch.impress.co.jp/docs/news/2149223.html"
+    }
+   ]
+  },
+  {
+   "id": "businesses-in-chatgpt",
+   "role": "代わりに動く",
+   "service": "ChatGPT",
+   "title": "事業者向け「Businesses in ChatGPT」(β版)",
+   "summary": "OpenAI公式に紹介ページ「Introducing Businesses in ChatGPT」と、設定手順のヘルプ記事があります。AI Watch(11/11)は、事業者が自社情報を管理し、自社のエージェントを公開できると報じていました。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "confidence": "公式ページ",
+   "japan": "報道どうしで提供範囲の書き方が食い違っていました(日本を含むとする報道/エージェント公開は米国の一部事業者に限るとする記載)。公式の本文は読めておらず、日本での提供は確認できていません。",
+   "links": [
+    {
+     "label": "Introducing Businesses in ChatGPT(OpenAI)",
+     "url": "https://openai.com/index/introducing-businesses-chatgpt/"
+    },
+    {
+     "label": "Setting up your business on ChatGPT(OpenAI ヘルプ)",
+     "url": "https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt"
+    },
+    {
+     "label": "AI Watch(2026-11-11)",
+     "url": "https://ai.watch.impress.co.jp/docs/news/2155604.html"
+    }
+   ]
+  },
+  {
+   "id": "claude-sheets-whiteboards",
+   "role": "整理する",
+   "service": "Claude",
+   "title": "Claude Sheets・Claude Whiteboards",
+   "summary": "Anthropic公式に「Claude Whiteboards, Claude Sheets, and Claude Data」の紹介記事と、それぞれの使い始めガイド(サポート記事)があります。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "confidence": "公式ページ",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Claude Whiteboards, Claude Sheets, and Claude Data(Claude)",
+     "url": "https://claude.com/resources/articles/sheets-whiteboards-data"
+    },
+    {
+     "label": "Get started with Claude Sheets(Claude サポート)",
+     "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets"
+    },
+    {
+     "label": "Get started with Claude Whiteboards(Claude サポート)",
+     "url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards"
+    }
+   ]
+  },
+  {
+   "id": "chatgpt-images-2-6",
+   "role": "作る",
+   "service": "ChatGPT",
+   "title": "画像生成「ChatGPT Images 2.6」(11/4)",
+   "summary": "OpenAI公式に「Introducing Images 2.6」のページとシステムカードがあります。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。編集時のディテール保持の改善などとする先週の情報は、公式本文では未確認です。",
+   "confidence": "公式ページ",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Introducing Images 2.6(OpenAI)",
+     "url": "https://openai.com/index/introducing-images-2-6/"
+    }
+   ]
+  },
+  {
+   "id": "gemini-4-carbon",
+   "role": "調べる",
+   "service": "Gemini",
+   "title": "「Gemini 4 Carbon」の提供開始",
+   "summary": "Google公式の日本語ブログに「Gemini 4 Carbon の提供を開始」と題するページがあります。先週は「未確認」としていた項目です。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "confidence": "公式ページ",
+   "japan": "日本語の公式ブログに掲載されていますが、提供範囲の詳細は本文を読めておらず確認できていません。",
+   "links": [
+    {
+     "label": "Gemini 4 Carbon の提供を開始(Google 公式ブログ)",
+     "url": "https://blog.google/intl/ja-jp/company-news/technology/gemini-4-carbon/"
+    }
+   ]
+  },
+  {
+   "id": "gpt-6-1-terra",
+   "role": "代わりに動く",
+   "service": "ChatGPT / OpenAI",
+   "title": "「GPT-6.1 Terra」",
+   "summary": "OpenAI公式に「Introducing GPT-6.1 Terra」のページがあります。先週は「未確認」としていた項目です。開発者コミュニティの投稿題には「fast and capable computer use」とありますが、公式本文は読めていません。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "confidence": "公式ページ",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Introducing GPT-6.1 Terra(OpenAI)",
+     "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
+    }
+   ]
+  }
+ ],
+ "unconfirmed_single_source": [
+  {
+   "id": "gemini-task-automation-japan",
+   "role": "代わりに動く",
+   "service": "Gemini",
+   "title": "Geminiのタスク自動化(食事注文・配車・予約の代行)の提供地域に日本が追加",
+   "summary": "「日本が追加された」と報じているのは個人運営のガジェットサイト1件のみ(リンクは載せません)。なお、Google公式には「複数ステップのタスクをGeminiに任せる」機能の英語ページと、日本語の11月Pixel Dropのページがありますが、本文は読めておらず、日本での提供開始は確認できていません。",
+   "confidence": "単独報道",
+   "japan": "日本が含まれるかは、公式の本文では未確認です。",
+   "links": [
+    {
+     "label": "Let Gemini handle your multi-step daily tasks on Android(Google 公式ブログ・英語)",
+     "url": "https://blog.google/innovation-and-ai/products/gemini-app/android-multi-step-tasks/"
+    },
+    {
+     "label": "11月のPixel Drop(Google 公式ブログ)",
+     "url": "https://blog.google/intl/ja-jp/products/devices-services/november-2026-pixel-drop/"
+    }
+   ],
+   "first_seen": "2026-11-12"
+  }
+ ],
+ "unverified": [],
+ "fetch_limits": "今回は公式ドメインを指定した検索で確認しました。検索結果はタイトルとURLのみで、openai.com / anthropic.com / blog.google の本文は読めていません。そのため公式の項目でも、機能の詳細や日本での提供範囲は確認できていないものがあります。"
 }
