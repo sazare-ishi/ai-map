@@ -23,9 +23,55 @@ while True:
     cards.append((i,end,src[i:end]));pos=end
 def attr(c,k): return re.search(k+'="([^"]*)"',c).group(1)
 def clean(c): return re.sub(re.escape(M1)+'.*?'+re.escape(M2),'',c,flags=re.S)
+
+# ---- 読みやすさの整形(何度実行しても同じ結果。文字は減らさず、見せ方だけ変える) ----
+ROW0='<div style="display: flex; gap: 12px; margin-top: 8px"><div style="width: 64px; flex: none; font-size: 12px; color: #64717a; padding-top: 2px">'
+def split_sent(t):
+    out=[];buf='';d=0
+    for i,ch in enumerate(t):
+        buf+=ch
+        if ch in '(（「': d+=1
+        elif ch in ')）」': d=max(0,d-1)
+        elif ch=='。' and d==0:
+            out.append(buf);buf=''
+    if buf.strip(): out.append(buf)
+    return out
+def fmt_text(inner):
+    parts=inner.split('<br>');o=''
+    for part in parts:
+        m=re.match(r'^([^:：<]{2,40}[:：])\s*(.*)$',part,re.S)
+        if len(parts)>1 and m:
+            o+='<div style="font-size: 12.5px; font-weight: 700; color: #1f2a30; margin-top: 12px">%s</div>'%m.group(1).rstrip(':：')
+            part=m.group(2)
+        for sn in split_sent(part):
+            o+='<p style="margin: 0 0 8px">%s</p>'%sn.strip()
+    return o
+def polish(card):
+    out='';pos=0
+    while True:
+        i=card.find(ROW0,pos)
+        if i<0: out+=card[pos:];break
+        out+=card[pos:i]
+        j=card.index('</div>',i+len(ROW0));label=card[i+len(ROW0):j]
+        k=j+len('</div>')
+        c0='<div style="flex: 1 1 0; min-width: 0; font-size: 14px">'
+        assert card.startswith(c0,k),label
+        d=0
+        for m in tag.finditer(card,k):
+            d+=1 if m.group().startswith('<div') else -1
+            if d==0: cend=m.end();break
+        inner=card[k+len(c0):cend-6]
+        rowend=card.index('</div>',cend)+6 if False else cend
+        # 行を閉じる </div>
+        assert card[cend:cend+6]=='</div>'
+        body=inner if label=='確認元' else fmt_text(inner)
+        out+=('<div style="margin-top: 18px"><div style="font-size: 12px; color: #64717a; border-bottom: 0.5px solid #e3e8eb; padding-bottom: 3px">%s</div>'
+              '<div style="margin-top: 8px; font-size: 14.5px; line-height: 1.9">%s</div></div>')%(label,body)
+        pos=cend+6
+    return out
 info=[]
 for i,e,c in cards:
-    c=clean(c)
+    c=polish(clean(c))
     ai,svc=attr(c[:200],'data-ai'),attr(c[:200],'data-svc').split()[0]
     name=html.unescape(re.sub('<.*?>','',re.search(r'color: #1f2a30">(.*?)</div>',c).group(1)))
     info.append(dict(ai=ai,svc=svc,name=name,card=c,file='link-%s-%s.html'%(ai,svc)))
@@ -33,7 +79,7 @@ LINK='<a href="%s" style="font-size:13px;color:#2d5f94;border-bottom:0.5px solid
 # 一覧側にリンクを足す(作り直し可能)
 out=[];p=0
 for (i,e,c),it in zip(cards,info):
-    new=clean(c); k=new.rindex('</div>')
+    new=it['card']; k=new.rindex('</div>')
     new=new[:k]+M1+'<div style="margin-top: 12px">'+LINK%it['file']+'</div>'+M2+new[k:]
     out.append(src[p:i]);out.append(new);p=e
 out.append(src[p:]);open(os.path.join(ROOT,'zukan-link.html'),'w',encoding='utf-8').write(''.join(out))
