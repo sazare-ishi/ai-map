@@ -24,7 +24,7 @@ def swap(s,page):
     a=s.find('<div class="rs"'); b=s.find(END,a)+len(END)
     return s[:a]+roles(page)+s[b:]
 # ---- cards
-LINK="display:inline-block;margin:2px 0 0 4px;font-size:11.5px;font-weight:400;line-height:1.6;color:#2d5f94;border:0.5px solid #9db9d9;border-radius:10px;padding:0 9px;text-decoration:none;vertical-align:middle;white-space:nowrap"
+LINK="display:inline-block;margin:2px 0 0 4px;font-size:11.5px;font-weight:600;line-height:1.6;color:#1f2a30;background:#fff;border:0.5px solid var(--c);border-radius:12px;padding:1px 10px;text-decoration:none;vertical-align:middle;white-space:nowrap"
 def row(color,label,tag,text):
     return ('<div style="margin-top: 18px"><div style="display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; border-bottom: 0.5px solid #e3e8eb; padding-bottom: 4px">'
      '<span style="font-size: 13px; font-weight: 700; color: %s">%s</span><span style="font-size: 11.5px; color: #64717a">(%s)</span></div>'
@@ -34,8 +34,8 @@ def src(links):
     return '<div style="display:flex;gap:12px;margin-top:10px;font-size:13px;line-height:1.8"><span style="width:44px;flex:none;color:#64717a;font-size:11.5px">確認元</span><span style="display:flex;flex-wrap:wrap;gap:2px 14px">%s</span></div>'%a
 def card(color,name,url,one,rows,links):
     r=''.join(row(color,*x) for x in rows)
-    return ('<div style="margin-top: 26px; border-left: 2px solid %s; padding: 2px 0 2px 14px"><div style="font-size: 16px; font-weight: 700; line-height: 1.5; color: #1f2a30">%s '
-     '<a href="%s" target="_blank" rel="noopener" style="%s">公式サイト ↗</a></div><div style="font-size: 12.5px; line-height: 1.6; color: #64717a; margin-top: 2px">%s</div>%s%s</div>')%(color,name,url,LINK,one,r,src(links))
+    return ('<div style="--c:%s;margin-top: 26px; border: 0.5px solid %s; border-left: 3px solid %s; border-radius: 12px; padding: 12px 14px; background: color-mix(in srgb, %s 7%%, #fff)"><div style="font-size: 16px; font-weight: 700; line-height: 1.5; color: #1f2a30">%s '
+     '<a href="%s" target="_blank" rel="noopener" style="%s">公式サイト ↗</a></div><div style="font-size: 12.5px; line-height: 1.6; color: #64717a; margin-top: 2px">%s</div>%s%s</div>')%(color,color,color,color,name,url,LINK,one,r,src(links))
 OF='確認元:公式ページ'; NG='確認できず'; CD='条件あり'
 IMG=[
  ('ChatGPT(画像生成)','https://chatgpt.com/','会話しながら、画像を作ったり直したりできるAI。',[
