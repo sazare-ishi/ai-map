@@ -9,16 +9,10 @@ def col(name,color,desc,chips):
     d='・'.join(desc)
     return ('<div class="rc" style="--c:%s"><div class="rn" style="color:%s;border-color:transparent;background:transparent"><span style="flex:1;text-align:justify;text-align-last:justify">%s</span></div>'
             '<div class="rr"><div class="rd" style="font-size:14px;line-height:1.8;color:#1f2a30;padding:0 0 0 .12em;white-space:nowrap;text-align:center;letter-spacing:.12em">%s</div><div class="cs">%s</div></div></div>')%(color,color,name,d,chips)
+BTN=[('AIに聞く・書く','#5b8fc9','zukan-ai.html'),('動画','#d27a58','zukan-video.html'),('資料','#d27a58','zukan-slides.html'),('画像','#d27a58','zukan-image.html'),('表・メモを整える','#3f9d86','zukan-organize.html'),('代わりに動く','#8579cf','zukan-agent.html'),('AIと向き合うために →','#c19a3b','checklist.html')]
 def roles(page):
-    c=lambda spans,href,key: chip(spans,href,page==key)
-    cols=[
-     col('調べる','#5b8fc9',['探す','まとめる'],c(['AIに聞く・','書く'],'zukan-ai.html','ai')),
-     col('作る','#d27a58',['動画','資料','画像','文章'],c(['動画'],'zukan-video.html','video')+c(['資料'],'zukan-slides.html','slides')+c(['画像'],'zukan-image.html','image')),
-     col('整理する','#3f9d86',['表','フォルダ','メモ'],c(['表・メモ','を整える'],'zukan-organize.html','organize')),
-     col('代わりに動く','#8579cf',['手順を踏んで','進める'],c(['代わりに動く'],'zukan-agent.html','agent')),
-     col('判断','#c19a3b',['AIに頼まない','自分の役割'],chip(['AIと向き合うために →'],'checklist.html',False)),
-    ]
-    return ('<div class="rs" style="margin-top:12px">'+''.join(cols)+'</div><!--re-->')
+    b=''.join('<a href="%s" style="flex:1 1 auto;box-sizing:border-box;text-align:center;padding:10px 14px;border:0.5px solid %s;border-left:3px solid %s;border-radius:12px;background:color-mix(in srgb,%s 14%%,#fff);color:#1f2a30;font-size:14px;font-weight:700;line-height:1.5;text-decoration:none;white-space:nowrap">%s</a>'%(h,c,c,c,n) for n,c,h in BTN)
+    return '<div class="rs" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px">'+b+'</div><!--re-->'
 END='<!--re-->'
 def swap(s,page):
     a=s.find('<div class="rs"'); b=s.find(END,a)+len(END)
