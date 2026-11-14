@@ -14,10 +14,10 @@ def roles(page):
     c=lambda spans,href,key: chip(spans,href,page==key)
     cols=[
      col('調べる','#5b8fc9',['探す','まとめる'],c(['AIに聞く・','書く'],'zukan-ai.html','ai')),
-     col('作る','#d27a58',['動画','資料','画像','文章'],c(['動画を作る'],'zukan-video.html','video')+c(['資料を作る'],'zukan-slides.html','slides')+c(['画像を作る'],'zukan-image.html','image')),
+     col('作る','#d27a58',['動画','資料','画像','文章'],c(['動画'],'zukan-video.html','video')+c(['資料'],'zukan-slides.html','slides')+c(['画像'],'zukan-image.html','image')),
      col('整理する','#3f9d86',['表','フォルダ','メモ'],c(['表・メモ','を整える'],'zukan-organize.html','organize')),
-     col('代わりに動く','#8579cf',['手順を踏んで','作業を進める'],c(['代わりに動く'],'zukan-agent.html','agent')),
-     col('判断','#c19a3b',['AIに頼む役割ではなく','自分が持つ役割'],chip(['AIと向き合うために →'],'checklist.html',False)),
+     col('代わりに動く','#8579cf',['手順を踏んで','進める'],c(['代わりに動く'],'zukan-agent.html','agent')),
+     col('判断','#c19a3b',['AIに頼まない','自分の役割'],chip(['AIと向き合うために →'],'checklist.html',False)),
     ]
     return ('<div class="rs" style="margin-top:12px">'+''.join(cols)+'</div><!--re-->')
 END='<!--re-->'
