@@ -11,10 +11,10 @@ def col(name,color,desc,chips):
             '<div class="rr"><div class="rd" style="font-size:14px;line-height:1.8;color:#1f2a30;padding:0 0 0 .12em;white-space:nowrap;text-align:center;letter-spacing:.12em">%s</div><div class="cs">%s</div></div></div>')%(color,color,name,d,chips)
 BTN=[('AIに聞く・書く','#5b8fc9','zukan-ai.html'),('動画','#d27a58','zukan-video.html'),('資料','#d27a58','zukan-slides.html'),('画像','#d27a58','zukan-image.html'),('表・メモを整える','#3f9d86','zukan-organize.html'),('代わりに動く','#8579cf','zukan-agent.html'),('AIと向き合うために →','#c19a3b','checklist.html')]
 def roles(page):
-    def btn(n,c,h): return '<a href="%s" style="flex:1 1 0;min-width:0;box-sizing:border-box;text-align:center;padding:7px 8px;border: 0.5px solid #dfe5e9;border-left:4px solid %s;border-radius:0 12px 12px 0;background:color-mix(in srgb,%s 10%%,#fff);color:#1f2a30;font-size:13.5px;font-weight:700;line-height:1.4;text-decoration:none">%s</a>'%(h,c,c,n)
-    rows=[BTN[0:1],BTN[1:4],BTN[4:6],BTN[6:7]]
-    body=''.join('<div style="display:flex;gap:6px">'+''.join(btn(*x) for x in r)+'</div>' for r in rows)
-    return '<div class="rs" style="margin-top:12px;display:flex;flex-direction:column;gap:6px;max-width:440px">'+body+'</div><!--re-->'
+    def btn(n,c,h): return '<a href="%s" style="flex:1 1 auto;box-sizing:border-box;text-align:center;white-space:nowrap;padding:7px 14px;border: 0.5px solid #dfe5e9;border-left:4px solid %s;border-radius:0 12px 12px 0;background:color-mix(in srgb,%s 10%%,#fff);color:#1f2a30;font-size:13.5px;font-weight:700;line-height:1.4;text-decoration:none">%s</a>'%(h,c,c,n)
+    rows=[BTN]
+    body=''.join('<div style="display:flex;flex-wrap:wrap;gap:6px">'+''.join(btn(*x) for x in r)+'</div>' for r in rows)
+    return '<div class="rs" style="margin-top:12px">'+body+'</div><!--re-->'
 END='<!--re-->'
 def swap(s,page):
     a=s.find('<div class="rs"'); b=s.find(END,a)+len(END)
