@@ -4,7 +4,6 @@ CH="display:block;box-sizing:border-box;font-size:12px;line-height:1.5;padding:4
 CUR=";border-color:#1f2a30;background:#f4f6f7;color:#1f2a30"
 def chip(spans,href,cur):
     inner=''.join('<span style="display:inline-block">%s</span>'%x for x in spans)
-    if cur: return '<span style="%s%s">%s</span>'%(CH,CUR,inner)
     return '<a href="%s" style="%s">%s</a>'%(href,CH,inner)
 def col(name,color,desc,chips):
     d='・'.join('<span style="display:inline-block">%s</span>'%x for x in desc)
