@@ -6,9 +6,9 @@ def chip(spans,href,cur):
     inner=''.join('<span style="display:inline-block">%s</span>'%x for x in spans)
     return '<a href="%s" style="%s">%s</a>'%(href,CH,inner)
 def col(name,color,desc,chips):
-    d='・'.join('<span style="display:inline-block">%s</span>'%x for x in desc)
+    d='・'.join(desc)
     return ('<div class="rc"><div class="rn" style="color:%s;border-color:%s;background:%s1a"><span style="flex:1;text-align:justify;text-align-last:justify">%s</span></div>'
-            '<div class="rr"><div class="rd" style="font-size:14px;line-height:1.8;color:#1f2a30;text-align:center">%s</div><div class="cs">%s</div></div></div>')%(color,color,color,name,d,chips)
+            '<div class="rr"><div class="rd" style="font-size:14px;line-height:1.8;color:#1f2a30;padding:0 8px;white-space:nowrap;text-align:justify;text-align-last:justify">%s</div><div class="cs">%s</div></div></div>')%(color,color,color,name,d,chips)
 def roles(page):
     c=lambda spans,href,key: chip(spans,href,page==key)
     cols=[
