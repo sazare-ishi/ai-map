@@ -11,7 +11,7 @@ def col(name,color,desc,chips):
             '<div class="rr"><div class="rd" style="font-size:14px;line-height:1.8;color:#1f2a30;padding:0 0 0 .12em;white-space:nowrap;text-align:center;letter-spacing:.12em">%s</div><div class="cs">%s</div></div></div>')%(color,color,name,d,chips)
 BTN=[('AIに聞く・書く','#5b8fc9','zukan-ai.html'),('動画','#d27a58','zukan-video.html'),('資料','#d27a58','zukan-slides.html'),('画像','#d27a58','zukan-image.html'),('表・メモを整える','#3f9d86','zukan-organize.html'),('代わりに動く','#8579cf','zukan-agent.html'),('AIと向き合うために →','#c19a3b','checklist.html')]
 def roles(page):
-    def btn(n,c,h): return '<a href="%s" style="flex:1 1 0;min-width:0;box-sizing:border-box;text-align:center;padding:11px 8px;border:0.5px solid %s;border-left:3px solid %s;border-radius:12px;background:color-mix(in srgb,%s 4%%,#fff);color:#1f2a30;font-size:14.5px;font-weight:700;line-height:1.5;text-decoration:none">%s</a>'%(h,c,c,c,n)
+    def btn(n,c,h): return '<a href="%s" style="flex:1 1 0;min-width:0;box-sizing:border-box;text-align:center;padding:11px 8px;border:0.5px solid %s;border-left:4px solid %s;border-radius:12px;background:color-mix(in srgb,%s 10%%,#fff);color:#1f2a30;font-size:14.5px;font-weight:700;line-height:1.5;text-decoration:none">%s</a>'%(h,c,c,c,n)
     rows=[BTN[0:1],BTN[1:4],BTN[4:5],BTN[5:6],BTN[6:7]]
     body=''.join('<div style="display:flex;gap:8px">'+''.join(btn(*x) for x in r)+'</div>' for r in rows)
     return '<div class="rs" style="margin-top:12px;display:flex;flex-direction:column;gap:8px">'+body+'</div><!--re-->'
@@ -30,7 +30,7 @@ def src(links):
     return '<div style="display:flex;gap:12px;margin-top:10px;font-size:13px;line-height:1.8"><span style="width:44px;flex:none;color:#64717a;font-size:11.5px">確認元</span><span style="display:flex;flex-wrap:wrap;gap:2px 14px">%s</span></div>'%a
 def card(color,name,url,one,rows,links):
     r=''.join(row(color,*x) for x in rows)
-    return ('<div style="--c:%s;margin-top: 26px; border: 0.5px solid %s; border-left: 3px solid %s; border-radius: 12px; padding: 12px 14px; background: color-mix(in srgb, %s 2%%, #fff)"><div style="font-size: 16px; font-weight: 700; line-height: 1.5; color: #1f2a30">%s '
+    return ('<div style="--c:%s;margin-top: 26px; border: 0.5px solid %s; border-left: 3px solid %s; border-radius: 12px; padding: 12px 14px; background: color-mix(in srgb, %s 6%%, #fff)"><div style="font-size: 16px; font-weight: 700; line-height: 1.5; color: #1f2a30">%s '
      '<a href="%s" target="_blank" rel="noopener" style="%s">公式サイト ↗</a></div><div style="font-size: 12.5px; line-height: 1.6; color: #64717a; margin-top: 2px">%s</div>%s%s</div>')%(color,color,color,color,name,url,LINK,one,r,src(links))
 OF='確認元:公式ページ'; NG='確認できず'; CD='条件あり'
 IMG=[
