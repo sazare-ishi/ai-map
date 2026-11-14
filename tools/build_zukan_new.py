@@ -17,11 +17,11 @@ def roles(page):
      col('作る','#d27a58',['動画','資料','画像','文章'],c(['動画を作る'],'zukan-video.html','video')+c(['資料を作る'],'zukan-slides.html','slides')+c(['画像を作る'],'zukan-image.html','image')),
      col('整理する','#3f9d86',['表','フォルダ','メモ'],c(['表・メモ','を整える'],'zukan-organize.html','organize')),
      col('代わりに動く','#8579cf',['手順を踏んで','作業を進める'],c(['代わりに動く'],'zukan-agent.html','agent')),
-     col('判断','#c19a3b',['AIに任せず','自分で決める'],chip(['移動 →'],'checklist.html',False)),
+     col('判断','#c19a3b',['AIに任せず','自分で決める'],chip(['AIと向き合うために →'],'checklist.html',False)),
     ]
     return ('<div class="rs" style="margin-top:12px">'+''.join(cols)+'</div>'
      '<div style="font-size:12px;color:#64717a;line-height:1.7;margin:8px 0 0">「判断」は、AIに頼む役割ではなく、自分が持つ役割です。</div>'
-     '<div style="font-size:12px;color:#64717a;line-height:1.7;margin:6px 0 4px">「移動 →」から、「AIと向き合うために」へ進めます。</div>')
+     )
 END='へ進めます。</div>'
 def swap(s,page):
     a=s.find('<div class="rs"'); b=s.find(END,a)+len(END)
