@@ -11,7 +11,7 @@ def block(items):
                 '<div style="font-size:14px;font-weight:700;line-height:1.6;margin:2px 0">%s</div><div style="font-size:13.5px;line-height:1.7">%s</div>%s</div>')%(d.month,d.day,wd[d.weekday()],html.escape(x['service']),html.escape(x['title']),html.escape(x['text']),links)
     body=''.join(one(x) for x in items)
     return ('<!--up--><details id="upcoming" style="margin:18px 0 0;border:0.5px solid #dfe5e9;border-left:4px solid #8a949b;border-radius:0 12px 12px 0;background:color-mix(in srgb,#8a949b 6%%,#fff);padding:0 14px">'
-            '<summary style="cursor:pointer;padding:10px 0;font-size:14px;font-weight:700">これから変わること(%d件)<span style="font-size:12px;font-weight:400;color:#64717a"> ・ 発表済みで、まだ実施されていない変更</span></summary>%s</details><!--/up-->')%(len(items),body)
+            '<summary style="cursor:pointer;padding:10px 0;font-size:14px;font-weight:700">これから変わること(%d件)<span style="display:block;margin:1px 0 0 17px;font-size:12px;font-weight:400;color:#64717a">発表済みで、まだ実施されていない変更</span></summary>%s</details><!--/up-->')%(len(items),body)
 def apply(s,today=None):
     today=today or datetime.date.today()
     items=[x for x in json.load(open('data/upcoming.json'))['items'] if datetime.date.fromisoformat(x['date'])>=today]
