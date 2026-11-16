@@ -18,11 +18,11 @@
      "url": "https://openai.com/index/introducing-chatgpt-wallet/"
     },
     {
-     "label": "OpenAI launches ChatGPT Wallet, allowing its 'dots' AI agents to make purchases for users(CNBC)",
+     "label": "CNBCの報道",
      "url": "https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html"
     },
     {
-     "label": "OpenAI launches ChatGPT Wallet, enabling 'dot' agents to make purchases(9to5Mac)",
+     "label": "9to5Macの報道",
      "url": "https://9to5mac.com/2026/11/13/openai-launches-chatgpt-wallet-enabling-dot-agents-to-make-purchases/"
     }
    ]
@@ -32,7 +32,7 @@
    "role": "代わりに動く",
    "service": "Gemini",
    "title": "「Gemini 4 Hydrogen」: 複数の手順にまたがる作業(エージェント用途)向けの新モデル",
-   "summary": "Google公式ブログに「Introducing Gemini 4 Hydrogen for Agentic Workflows」のページがあります。VentureBeatは、Flash(軽量・高速モデル)の後継で、より速く賢い一方、価格は高めになったと題して報じています。報道は11月13日ごろです。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "summary": "Google公式ブログに「Introducing Gemini 4 Hydrogen for Agentic Workflows」のページがあります。VentureBeatは、Flash(軽量・高速モデル)の後継で、より速く賢い一方、価格は高めになったと報じています。報道は11月13日ごろです。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
    "confidence": "公式ページ",
    "japan": "公式ページは英語版で確認しました。日本語ページや日本での提供は確認できていません。",
    "links": [
@@ -41,7 +41,7 @@
      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
     },
     {
-     "label": "Google launches Gemini 4 Hydrogen — a faster, smarter, pricier Flash successor(VentureBeat)",
+     "label": "VentureBeatの報道",
      "url": "https://venturebeat.com/technology/google-launches-gemini-4-hydrogen-a-faster-smarter-pricier-flash-successor"
     }
    ]
@@ -60,7 +60,7 @@
      "url": "https://claude.com/resources/articles/claude-meetings"
     },
     {
-     "label": "Anthropic launches Claude Meetings to turn workplace discussions into plans and tasks(TechCrunch)",
+     "label": "TechCrunchの報道",
      "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
     }
    ]
@@ -70,7 +70,7 @@
    "role": "調べる",
    "service": "Claude",
    "title": "新モデル「Claude Fable 5.2」「Claude Mythos 5.2」(11/9)",
-   "summary": "Anthropic公式に「Introducing Claude Fable 5.2 and Claude Mythos 5.2」のページがあります。窓の杜は「最強モデルがより高速・安価に」と題して報じ、CNBC・MacRumorsも11月9日に報じています。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "summary": "Anthropic公式に「Introducing Claude Fable 5.2 and Claude Mythos 5.2」のページがあります。窓の杜は、より高速で安価になったと報じ、CNBC・MacRumorsも11月9日に報じています。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
    "confidence": "公式ページ",
    "japan": "確認できていません。窓の杜(日本語)の報道はありますが、日本での提供範囲は公式本文では未確認です。",
    "links": [
@@ -79,11 +79,11 @@
      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
     },
     {
-     "label": "Anthropic、「Claude Fable 5.2」「Claude Mythos 5.2」を発表(窓の杜)",
+     "label": "窓の杜の報道",
      "url": "https://forest.watch.impress.co.jp/docs/news/2154982.html"
     },
     {
-     "label": "Anthropic releases Claude Fable 5.2 and Claude Mythos 5.2 ahead of IPO(CNBC)",
+     "label": "CNBCの報道",
      "url": "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html"
     }
    ]
@@ -158,7 +158,7 @@
      "url": "https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt"
     },
     {
-     "label": "AI Watch(2026-11-11)",
+     "label": "AI Watchの報道",
      "url": "https://ai.watch.impress.co.jp/docs/news/2155604.html"
     }
    ]
@@ -269,7 +269,7 @@
      "url": "https://x.ai/blog/introducing-grok-bot"
     },
     {
-     "label": "Grok Bot Brings Always-On AI Agents to macOS and iOS(MacRumors)",
+     "label": "MacRumorsの報道",
      "url": "https://macrumors.com/2026/08/11/grok-bot-macos-ios"
     }
    ]
