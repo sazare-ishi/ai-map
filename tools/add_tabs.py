@@ -2,8 +2,9 @@
 # 毎週 index.html を更新したあと、add_cats.py → add_filter.py → add_upcoming.py → このスクリプトの順に実行する。何度実行しても同じ結果になる。
 import re
 P='docs/index.html'
-ON='padding:10px 0 8px;font-size:min(13px,calc((100vw - 80px)/22.5));line-height:1.4;text-decoration:none;color:#1f2a30;font-weight:700;border-bottom:2px solid #1f2a30;'
-OFF='padding:10px 0 8px;font-size:min(13px,calc((100vw - 80px)/22.5));line-height:1.4;text-decoration:none;color:#64717a;'
+ON='padding:10px 0 8px;font-size:min(13px,calc((100vw - 92px)/22.5));line-height:1.4;text-decoration:none;color:#1f2a30;font-weight:700;border-bottom:2px solid #1f2a30;'
+OFF='padding:10px 0 8px;font-size:min(13px,calc((100vw - 92px)/22.5));line-height:1.4;text-decoration:none;color:#64717a;'
+V=';padding-left:8px;background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat'
 def apply(s):
     # 前回の入れ物・メニュー・スクリプトを外す
     s=re.sub(r'<div id="subtabs".*?</div><!--/subtabs-->','',s,flags=re.S)
@@ -30,14 +31,14 @@ def apply(s):
        +'<div id="pane-shin" hidden style="margin-top:10px">'+up+'</div><!--/pane-->'+s[e:])
     # 下段メニュー(帯の中、上段メニューの下)
     tabs=('<div id="subtabs" style="display:flex;gap:16px;justify-content:center;border-bottom:0.5px solid #dfe5e9">'
-          '<a href="#sohyo" data-tab="sohyo" style="%s">総評</a><a href="#ugoki" data-tab="ugoki" style="%s">代表的な動き</a><a href="#shin" data-tab="shin" style="%s">発表済み変更点(未実施分)</a></div><!--/subtabs-->')%(ON,OFF,OFF)
+          '<a href="#sohyo" data-tab="sohyo" style="%s">総評</a><a href="#ugoki" data-tab="ugoki" data-v="1" style="%s">代表的な動き</a><a href="#shin" data-tab="shin" data-v="1" style="%s">発表済み変更点(未実施分)</a></div><!--/subtabs-->')%(ON,OFF+V,OFF+V)
     n=s.find('</nav>'); assert n>0
     s=s[:n+6]+tabs+s[n+6:]
     js=('<script id="tabscript">(function(){var T={sohyo:document.getElementById("pane-sohyo"),ugoki:document.getElementById("pane-ugoki"),shin:document.getElementById("pane-shin")};'
-        'var L=[].slice.call(document.querySelectorAll("#subtabs a"));var ON=%r,OFF=%r;'
-        'function show(k){if(!T[k])k="sohyo";for(var i in T)T[i].hidden=(i!==k);L.forEach(function(a){a.setAttribute("style",a.getAttribute("data-tab")===k?ON:OFF)})}'
+        'var L=[].slice.call(document.querySelectorAll("#subtabs a"));var ON=%r,OFF=%r,V=%r;'
+        'function show(k){if(!T[k])k="sohyo";for(var i in T)T[i].hidden=(i!==k);L.forEach(function(a){a.setAttribute("style",(a.getAttribute("data-tab")===k?ON:OFF)+(a.getAttribute("data-v")?V:""))})}'
         'L.forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var k=a.getAttribute("data-tab");show(k);try{history.replaceState(null,"","#"+k)}catch(x){}})});'
-        'show((location.hash||"").slice(1))})();</script>')%(ON,OFF)
+        'show((location.hash||"").slice(1))})();</script>')%(ON,OFF,V)
     return s.replace('</main>',js+'</main>',1)
 if __name__=='__main__':
     s=open(P).read(); open(P,'w').write(apply(s))
