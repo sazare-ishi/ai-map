@@ -23,8 +23,8 @@ def band(s,inmain):
     assert a>=0 and n>a and e>n
     nav=s[n:e]
     # メニューの幅: 最大640pxの中を、端から端まで使う(余白なし)。文字は各タブの真ん中にそろえる
-    nst=('display:flex;gap:0;margin:0 -20px;padding:0;border-bottom:1px solid #dfe5e9' if inmain
-         else 'display:flex;gap:0;max-width:640px;margin:0 auto;padding:0;box-sizing:border-box;border-bottom:1px solid #dfe5e9')
+    nst=('display:flex;gap:0;margin:0 -20px;padding:0;' if inmain
+         else 'display:flex;gap:0;max-width:640px;margin:0 auto;padding:0;box-sizing:border-box;')
     nav=re.sub(r'^<nav style="[^"]*"','<nav style="%s"'%nst,nav,count=1)
     nav=re.sub(r'(<a href="[^"]*" style="[^"]*?)(;?text-align:center)?;?"',lambda m:m.group(1)+';text-align:center"',nav)
     if inmain and s[e:].startswith('<div id="subtabs"'):  # トップの下段メニュー(総評 / 代表的な動き / 発表済み変更点)
@@ -34,6 +34,7 @@ def band(s,inmain):
         e2=s.find('</div></div>',e)+12 if m else e
         sub=fullw(snfit(vline(s[e:e2])))
         sub=sub.replace('max-width:640px;margin:0 auto;padding:0 20px','max-width:640px;margin:0 auto;padding:0;box-sizing:border-box',1)
+    sub=sub.replace(';border-bottom:0.5px solid #dfe5e9','').replace('border-bottom:0.5px solid #dfe5e9;','').replace('border-bottom:0.5px solid #dfe5e9','')
     cs='background:%s;margin:0 -20px;padding:10px 20px 0'%BAND if inmain else 'background:%s;padding:10px 0 0'%BAND
     ts='background:%s;margin:12px -20px 0;padding:0 20px'%BAND if inmain else 'background:%s;margin:12px 0 0'%BAND
     css=('<style id="bandstyle">@media(min-width:681px){#tabsband>nav,#tabsband>#subtabs{margin-left:0!important;margin-right:0!important}#catsband #cats{padding-left:20px!important;padding-right:20px!important}}</style>')

@@ -34,7 +34,7 @@ def apply(s):
        +'<div id="pane-ugoki" hidden style="margin-top:28px">'+s[h:e]+'</div><!--/pane-->'
        +'<div id="pane-shin" hidden style="margin-top:28px">'+up+'</div><!--/pane-->'+s[e:])
     # 下段メニュー(帯の中、上段メニューの下)
-    tabs=('<div id="subtabs" style="display:flex;gap:0;margin:0 -20px;border-bottom:0.5px solid #dfe5e9">'
+    tabs=('<div id="subtabs" style="display:flex;gap:0;margin:0 -20px">'
           '<a href="#sohyo" data-tab="sohyo" data-x="%s" style="%s%s">総　評</a><a href="#ugoki" data-tab="ugoki" data-x="%s" style="%s%s">代表的な動き</a><a href="#shin" data-tab="shin" data-x="%s" style="%s%s">発表済み変更点(未実施分)</a></div><!--/subtabs-->')%(X1,ON,X1,X2,OFF,X2,X3,OFF,X3)
     n=s.find('</nav>'); assert n>0
     s=s[:n+6]+tabs+s[n+6:]
