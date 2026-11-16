@@ -22,7 +22,12 @@ def band(s,inmain):
     nav=s[n:e]
     if inmain: nav=nav.replace('margin:0 -20px 16px','margin:0 -20px',1)
     st='background:%s;margin:0 -20px 16px;padding:10px 20px 0'%BAND if inmain else 'background:%s;padding:10px 0 0'%BAND
-    return s[:a]+'<div id="band" style="%s">'%st+s[a:n]+nav+'</div><!--/band-->'+s[e:]
+    # 下段メニュー(目的から選ぶ/最初の7日間 など)がある頁は、それも帯に入れる
+    m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0 20px"><div style="display:flex;gap:',s[e:])
+    if m:
+        k=s.find('</div></div>',e)+12; e2=k
+    else: e2=e
+    return s[:a]+'<div id="band" style="%s">'%st+s[a:n]+nav+s[e:e2]+'</div><!--/band-->'+s[e2:]
 if __name__=='__main__':
     for f in ['index','start7','setup','templates','checklist','tips','zukan-link','zukan-video','zukan-slides','zukan-ai','zukan-agent','zukan-image','zukan-organize']:
         p='docs/%s.html'%f; s=open(p).read(); s=apply(s); open(p,'w').write(s)
