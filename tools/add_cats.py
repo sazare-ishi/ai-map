@@ -1,6 +1,6 @@
 # 「AI機能5分類」(色と機能の一覧)を、サブタイトルの下・メニューの上に入れる。全ページ共通。
 import re,sys
-SUB='まわりではAI・Webサービスがどう活用されているのかを、会社や組織に所属していなくても、さいしょの一歩がわかるように説明していきます。'
+SUB='まわりではAI・Webサービスがどう活用されているのかを、会社や組織に所属していなくても、はじめの一歩がわかるように説明していきます。'
 CATS=[('調べる','#5b8fc9','探す・まとめる'),('作る','#d27a58','動画・資料・画像・文章'),('整理する','#3f9d86','表・フォルダ・メモ'),('代わりに動く','#8579cf','手順を踏んで進める'),('判断','#c19a3b','AIに頼まない・自分の役割')]
 def block(inmain=False):
     items=''.join('<div style="flex:1 1 auto;text-align:center;padding:4px 6px 5px;border-bottom:3px solid %s;font-size:13px;font-weight:700;color:#1f2a30;white-space:nowrap">%s</div>'%(c,n) for n,c,f in CATS)
