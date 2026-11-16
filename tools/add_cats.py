@@ -25,9 +25,9 @@ def band(s,inmain):
     if inmain and s[e:].startswith('<div id="subtabs"'):  # トップの下段メニュー(総評 / 代表的な動き / 発表済み変更点)
         e2=s.find('<!--/subtabs-->',e)+len('<!--/subtabs-->'); sub=s[e:e2]
     else:
-        m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0 20px"><div style="display:flex;(?:flex-wrap:wrap;)?gap:',s[e:])
+        m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0(?: 20px)?"><div style="display:flex;(?:flex-wrap:wrap;)?gap:',s[e:])
         e2=s.find('</div></div>',e)+12 if m else e
-        sub=snfit(vline(s[e:e2]))
+        sub=fullw(snfit(vline(s[e:e2])))
     cs='background:%s;margin:0 -20px;padding:10px 20px 0'%BAND if inmain else 'background:%s;padding:10px 0 0'%BAND
     ts='background:%s;margin:12px -20px 0;padding:0 20px'%BAND if inmain else 'background:%s;margin:12px 0 0'%BAND
     out=(s[:a]+'<div id="band">'
@@ -37,6 +37,11 @@ def band(s,inmain):
     if inmain:
         out=re.sub(r'(<!--/band-->\s*(?:<div id="pane-sohyo">)?<h2 style=")margin-top:\d+px',r'\1margin-top:28px',out,count=1)
     return out
+def fullw(t):
+    # 図鑑の下段メニュー(目的から選ぶ / 連携チェック)は、画面の横幅いっぱいに2等分する
+    if 'justify-content:center' not in t: return t
+    t=t.replace('max-width:640px;margin:0 auto;padding:0 20px','max-width:640px;margin:0 auto;padding:0',1).replace('display:flex;gap:32px;justify-content:center','display:flex;gap:0',1)
+    return re.sub(r'(<a href="[^"]*" style="[^"]*)"',lambda m: m.group(1)+('' if 'flex:1 1 0' in m.group(1) else ';flex:1 1 0;text-align:center;padding-left:0')+'"',t)
 def snfit(t):
     # 学ぶ側の5つの選択肢は、横にスクロールさせず、字の大きさを画面幅に合わせて1段に収める
     if 'class="sn"' not in t: return t

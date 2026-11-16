@@ -2,9 +2,12 @@
 # 毎週 index.html を更新したあと、add_cats.py → add_filter.py → add_upcoming.py → このスクリプトの順に実行する。何度実行しても同じ結果になる。
 import re
 P='docs/index.html'
-ON='padding:10px 0 8px;font-size:min(13px,calc((100vw - 92px)/22.5));line-height:1.4;text-decoration:none;color:#1f2a30;font-weight:700;border-bottom:2px solid #1f2a30;'
-OFF='padding:10px 0 8px;font-size:min(13px,calc((100vw - 92px)/22.5));line-height:1.4;text-decoration:none;color:#64717a;'
-V=';padding-left:8px;background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat'
+ON='padding:10px 0 8px;font-size:min(13px,calc((50vw - 14px)/14));line-height:1.4;text-decoration:none;color:#1f2a30;font-weight:700;border-bottom:2px solid #1f2a30;'
+OFF='padding:10px 0 8px;font-size:min(13px,calc((50vw - 14px)/14));line-height:1.4;text-decoration:none;color:#64717a;'
+LN=';background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat'
+X1=';flex:8 1 0;text-align:center;padding-left:0;padding-right:0'
+X2=';flex:12 1 0;text-align:center;padding-left:0;padding-right:0'+LN
+X3=';flex:20 1 0;text-align:center;padding-left:0;padding-right:0'+LN
 def apply(s):
     # 前回の入れ物・メニュー・スクリプトを外す
     s=re.sub(r'<div id="subtabs".*?</div><!--/subtabs-->','',s,flags=re.S)
@@ -31,15 +34,15 @@ def apply(s):
        +'<div id="pane-ugoki" hidden style="margin-top:28px">'+s[h:e]+'</div><!--/pane-->'
        +'<div id="pane-shin" hidden style="margin-top:28px">'+up+'</div><!--/pane-->'+s[e:])
     # 下段メニュー(帯の中、上段メニューの下)
-    tabs=('<div id="subtabs" style="display:flex;gap:16px;justify-content:center;border-bottom:0.5px solid #dfe5e9">'
-          '<a href="#sohyo" data-tab="sohyo" style="%s">総評</a><a href="#ugoki" data-tab="ugoki" data-v="1" style="%s">代表的な動き</a><a href="#shin" data-tab="shin" data-v="1" style="%s">発表済み変更点(未実施分)</a></div><!--/subtabs-->')%(ON,OFF+V,OFF+V)
+    tabs=('<div id="subtabs" style="display:flex;gap:0;margin:0 -20px;border-bottom:0.5px solid #dfe5e9">'
+          '<a href="#sohyo" data-tab="sohyo" data-x="%s" style="%s%s">総　評</a><a href="#ugoki" data-tab="ugoki" data-x="%s" style="%s%s">代表的な動き</a><a href="#shin" data-tab="shin" data-x="%s" style="%s%s">発表済み変更点(未実施分)</a></div><!--/subtabs-->')%(X1,ON,X1,X2,OFF,X2,X3,OFF,X3)
     n=s.find('</nav>'); assert n>0
     s=s[:n+6]+tabs+s[n+6:]
     js=('<script id="tabscript">(function(){var T={sohyo:document.getElementById("pane-sohyo"),ugoki:document.getElementById("pane-ugoki"),shin:document.getElementById("pane-shin")};'
-        'var L=[].slice.call(document.querySelectorAll("#subtabs a"));var ON=%r,OFF=%r,V=%r;'
-        'function show(k){if(!T[k])k="sohyo";for(var i in T)T[i].hidden=(i!==k);L.forEach(function(a){a.setAttribute("style",(a.getAttribute("data-tab")===k?ON:OFF)+(a.getAttribute("data-v")?V:""))})}'
+        'var L=[].slice.call(document.querySelectorAll("#subtabs a"));var ON=%r,OFF=%r;'
+        'function show(k){if(!T[k])k="sohyo";for(var i in T)T[i].hidden=(i!==k);L.forEach(function(a){a.setAttribute("style",(a.getAttribute("data-tab")===k?ON:OFF)+a.getAttribute("data-x"))})}'
         'L.forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var k=a.getAttribute("data-tab");show(k);try{history.replaceState(null,"","#"+k)}catch(x){}})});'
-        'show((location.hash||"").slice(1));window.addEventListener("hashchange",function(){show((location.hash||"").slice(1))})})();</script>')%(ON,OFF,V)
+        'show((location.hash||"").slice(1));window.addEventListener("hashchange",function(){show((location.hash||"").slice(1))})})();</script>')%(ON,OFF)
     css=('<style id="tabstyle">#pane-ugoki>h2{display:none}'
          '#pane-sohyo>h2{font-size:0!important;margin:0 0 12px!important;padding:0!important;border:0!important;font-weight:400}'
          '#pane-sohyo>h2 span{font-size:12px!important}#upcoming>div:first-child{margin-top:0!important}</style>')
