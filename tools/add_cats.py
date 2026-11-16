@@ -30,7 +30,7 @@ def band(s,inmain):
     if inmain and s[e:].startswith('<div id="subtabs"'):  # トップの下段メニュー(総評 / 代表的な動き / 発表済み変更点)
         e2=s.find('<!--/subtabs-->',e)+len('<!--/subtabs-->'); sub=s[e:e2]
     else:
-        m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0(?: 20px)?"><div style="display:flex;(?:flex-wrap:wrap;)?gap:',s[e:])
+        m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0(?: 20px)?(?:;box-sizing:border-box)?"><div style="display:flex;(?:flex-wrap:wrap;)?gap:',s[e:])
         e2=s.find('</div></div>',e)+12 if m else e
         sub=fullw(snfit(vline(s[e:e2])))
         sub=sub.replace('max-width:640px;margin:0 auto;padding:0 20px','max-width:640px;margin:0 auto;padding:0;box-sizing:border-box',1)
