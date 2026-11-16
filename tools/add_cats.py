@@ -23,14 +23,24 @@ def band(s,inmain):
     if inmain: nav=nav.replace('margin:0 -20px 16px','margin:0 -20px',1)
     st='background:%s;margin:0 -20px;padding:10px 20px 39px'%BAND if inmain else 'background:%s;padding:10px 0 0'%BAND
     # 下段メニュー(目的から選ぶ/最初の7日間 など)がある頁は、それも帯に入れる
-    m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0 20px"><div style="display:flex;gap:',s[e:])
+    m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0 20px"><div style="display:flex;(?:flex-wrap:wrap;)?gap:',s[e:])
     if m:
         k=s.find('</div></div>',e)+12; e2=k
     else: e2=e
-    out=s[:a]+'<div id="band" style="%s">'%st+s[a:n]+vline(nav)+vline(s[e:e2])+'</div><!--/band-->'+s[e2:]
+    out=s[:a]+'<div id="band" style="%s">'%st+s[a:n]+vline(nav)+snfit(vline(s[e:e2]))+'</div><!--/band-->'+s[e2:]
     if inmain:  # トップは下段メニューがない。帯の下の余白を他頁にそろえ、総評の見出しは他頁の本文と同じ高さにする
         out=re.sub(r'(<!--/band-->\s*<h2 style=")margin-top:\d+px',r'\1margin-top:28px',out,count=1)
     return out
+def snfit(t):
+    # 学ぶ側の5つの選択肢は、横にスクロールさせず、幅に収まるよう折り返す(全部が最初から見えるようにする)
+    if 'class="sn"' not in t: return t
+    t=t.replace(';overflow-x:auto','').replace('display:flex;gap:12px','display:flex;flex-wrap:wrap;gap:0',1)
+    t=t.replace(';padding-right:10px;text-align:center;flex:1 1 auto','')
+    def f(m):
+        x=m.group(1)
+        if VL not in x: x+=VL
+        return x+';padding-right:10px;text-align:center;flex:1 1 auto"'
+    return re.sub(r'(<a href="[^"]*" style="[^"]*)"',f,t)
 VL=';padding-left:10px;background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat'
 def vline(t):
     # 並んだ選択肢の間に、細い縦線を入れる(2つ目以降の左側)。何度実行しても同じ結果になる。
