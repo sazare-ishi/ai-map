@@ -1,0 +1,26 @@
+{
+  "note": "「これから変わること」(発表済みで、まだ実施されていない変更)。公式ページに日付と内容が書かれているものだけ。日付を過ぎた項目は、画面に出なくなる(tools/add_upcoming.py)。報道だけのものは入れない(待機リストへ)。",
+  "items": [
+    {
+      "date": "2026-12-11",
+      "service": "ChatGPT",
+      "title": "カスタムGPT(自分で作って使うGPT)が使えなくなる予定",
+      "text": "公式のヘルプによると、すべてのプランが対象です。それまでに、必要なものを移行しておくよう案内されています。",
+      "links": [{"label": "Custom GPT retirement and migration FAQ(OpenAI ヘルプ・英語)", "url": "https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq"}]
+    },
+    {
+      "date": "2026-12-11",
+      "service": "ChatGPT",
+      "title": "音声の「Advanced」「Standard」が終わり、「Live」に切り替わる",
+      "text": "この日以降は、設定の音声モデルから Advanced・Standard を選べなくなり、これまで選んでいた人は Live の音声になります。会話の履歴は残ります。",
+      "links": [{"label": "Retiring Advanced and Standard Voice in ChatGPT(OpenAI ヘルプ・英語)", "url": "https://help.openai.com/en/articles/20001638-retiring-advanced-and-standard-voice-in-chatgpt"}]
+    },
+    {
+      "date": "2026-12-17",
+      "service": "Gemini",
+      "title": "Gem(自分用にカスタムしたGemini)が削除され、「スキル」に移行する",
+      "text": "個人のGoogleアカウントの場合、Gemは自動的にスキルに移行されますが、一部のファイルは移行されません。必要なファイルは、12月17日より前にダウンロードするよう案内されています。仕事用・学校用のアカウントは2027年です。",
+      "links": [{"label": "Gem からスキルへの移行について(Gemini アプリ ヘルプ)", "url": "https://support.google.com/gemini/answer/18560919?hl=ja"}]
+    }
+  ]
+}
