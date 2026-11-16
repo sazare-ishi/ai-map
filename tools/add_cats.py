@@ -35,9 +35,9 @@ def band(s,inmain):
         sub=fullw(snfit(vline(s[e:e2])))
         sub=sub.replace('max-width:640px;margin:0 auto;padding:0 20px','max-width:640px;margin:0 auto;padding:0;box-sizing:border-box',1)
     sub=sub.replace(';border-bottom:0.5px solid #dfe5e9','').replace('border-bottom:0.5px solid #dfe5e9;','').replace('border-bottom:0.5px solid #dfe5e9','')
-    cs='background:%s;margin:0 -20px;padding:10px 20px 0'%BAND if inmain else 'background:%s;padding:10px 0 0'%BAND
-    ts='background:%s;margin:12px -20px 0;padding:0 20px'%BAND if inmain else 'background:%s;margin:12px 0 0'%BAND
-    css=('<style id="bandstyle">@media(min-width:681px){#tabsband>nav,#tabsband>#subtabs{margin-left:0!important;margin-right:0!important}#catsband #cats{padding-left:20px!important;padding-right:20px!important}}</style>')
+    cs='background:%s;margin:0 -20px;padding:10px 20px 0'%BAND if inmain else 'background:%s;max-width:640px;margin:0 auto;padding:10px 0 0;box-sizing:border-box'%BAND
+    ts='background:%s;margin:12px -20px 0;padding:0 20px'%BAND if inmain else 'background:%s;max-width:640px;margin:12px auto 0;box-sizing:border-box'%BAND
+    css=('<style id="bandstyle">@media(min-width:681px){#tabsband>nav,#tabsband>#subtabs{margin-left:0!important;margin-right:0!important}#catsband,#tabsband{margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important}#catsband #cats{padding-left:20px!important;padding-right:20px!important}}</style>')
     if not inmain: css=''
     out=(s[:a]+css+'<div id="band" style="font-family:\'Noto Sans JP\',\'Hiragino Kaku Gothic ProN\',\'Yu Gothic\',Meiryo,sans-serif">'
          +'<div id="catsband" style="%s">'%cs+s[a:n]+'</div><!--/catsband-->'
