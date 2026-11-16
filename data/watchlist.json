@@ -1,0 +1,209 @@
+{
+ "note": "公開ページには載せない待機リスト。ニュースで知った発表を、公式ページの本文で確認できるまで置く。確認できたら公式の内容で書き直して公開し、ここから外す。毎週見直す。",
+ "items": [
+  {
+   "id": "chatgpt-wallet",
+   "role": "代わりに動く",
+   "service": "ChatGPT / OpenAI",
+   "title": "ChatGPT Wallet: dots(代わりに動くAI)が、カード情報を見ずに買い物を代行(11/13)",
+   "summary": "OpenAI公式に「Introducing ChatGPT Wallet」のページがあります。CNBC・9to5Macなどが11月13日に、ChatGPTのエージェント「dots」が利用者に代わって購入できるようになったと報じています。Benzingaは、実際のカード情報には触れずに買い物をする仕組みだと伝えています。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Introducing ChatGPT Wallet(OpenAI)",
+     "url": "https://openai.com/index/introducing-chatgpt-wallet/"
+    },
+    {
+     "label": "CNBCの報道",
+     "url": "https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html"
+    },
+    {
+     "label": "9to5Macの報道",
+     "url": "https://9to5mac.com/2026/11/13/openai-launches-chatgpt-wallet-enabling-dot-agents-to-make-purchases/"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-15"
+  },
+  {
+   "id": "gemini-4-hydrogen",
+   "role": "代わりに動く",
+   "service": "Gemini",
+   "title": "「Gemini 4 Hydrogen」: 複数の手順にまたがる作業(エージェント用途)向けの新モデル",
+   "summary": "Google公式ブログに「Introducing Gemini 4 Hydrogen for Agentic Workflows」のページがあります。VentureBeatは、Flash(軽量・高速モデル)の後継で、より速く賢い一方、価格は高めになったと報じています。報道は11月13日ごろです。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "公式ページは英語版で確認しました。日本語ページや日本での提供は確認できていません。",
+   "links": [
+    {
+     "label": "Introducing Gemini 4 Hydrogen for Agentic Workflows(Google 公式ブログ・英語)",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+    },
+    {
+     "label": "VentureBeatの報道",
+     "url": "https://venturebeat.com/technology/google-launches-gemini-4-hydrogen-a-faster-smarter-pricier-flash-successor"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-15"
+  },
+  {
+   "id": "claude-meetings",
+   "role": "整理する",
+   "service": "Claude",
+   "title": "Claude Meetings(ベータ): ビデオ会議に参加して、話し合いを計画やタスクにまとめる(11/10)",
+   "summary": "Anthropic公式に「Introducing Claude Meetings, now in beta」のページがあります。TechCrunch(11月10日)は、職場での話し合いを計画やタスクにするものと報じ、Dataconomy(11月13日)はGoogle Meetで使えると伝えています。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Introducing Claude Meetings, now in beta(Claude)",
+     "url": "https://claude.com/resources/articles/claude-meetings"
+    },
+    {
+     "label": "TechCrunchの報道",
+     "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-15"
+  },
+  {
+   "id": "claude-fable-mythos-5-2",
+   "role": "調べる",
+   "service": "Claude",
+   "title": "新モデル「Claude Fable 5.2」「Claude Mythos 5.2」(11/9)",
+   "summary": "Anthropic公式に「Introducing Claude Fable 5.2 and Claude Mythos 5.2」のページがあります。窓の杜は、より高速で安価になったと報じ、CNBC・MacRumorsも11月9日に報じています。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "確認できていません。窓の杜(日本語)の報道はありますが、日本での提供範囲は公式本文では未確認です。",
+   "links": [
+    {
+     "label": "Introducing Claude Fable 5.2 and Claude Mythos 5.2(Anthropic)",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+    },
+    {
+     "label": "窓の杜の報道",
+     "url": "https://forest.watch.impress.co.jp/docs/news/2154982.html"
+    },
+    {
+     "label": "CNBCの報道",
+     "url": "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-15"
+  },
+  {
+   "id": "businesses-in-chatgpt",
+   "role": "代わりに動く",
+   "service": "ChatGPT",
+   "title": "事業者向け「Businesses in ChatGPT」(β版)",
+   "summary": "OpenAI公式に紹介ページ「Introducing Businesses in ChatGPT」と、設定手順のヘルプ記事があります。AI Watch(11/11)は、事業者が自社情報を管理し、自社のエージェントを公開できると報じていました。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "報道どうしで提供範囲の書き方が食い違っていました(日本を含むとする報道/エージェント公開は米国の一部事業者に限るとする記載)。公式の本文は読めておらず、日本での提供は確認できていません。",
+   "links": [
+    {
+     "label": "Introducing Businesses in ChatGPT(OpenAI)",
+     "url": "https://openai.com/index/introducing-businesses-chatgpt/"
+    },
+    {
+     "label": "Setting up your business on ChatGPT(OpenAI ヘルプ)",
+     "url": "https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt"
+    },
+    {
+     "label": "AI Watchの報道",
+     "url": "https://ai.watch.impress.co.jp/docs/news/2155604.html"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-15"
+  },
+  {
+   "id": "claude-sheets-whiteboards",
+   "role": "整理する",
+   "service": "Claude",
+   "title": "Claude Sheets・Claude Whiteboards",
+   "summary": "Anthropic公式に「Claude Whiteboards, Claude Sheets, and Claude Data」の紹介記事と、それぞれの使い始めガイド(サポート記事)があります。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Claude Whiteboards, Claude Sheets, and Claude Data(Claude)",
+     "url": "https://claude.com/resources/articles/sheets-whiteboards-data"
+    },
+    {
+     "label": "Get started with Claude Sheets(Claude サポート)",
+     "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets"
+    },
+    {
+     "label": "Get started with Claude Whiteboards(Claude サポート)",
+     "url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-15"
+  },
+  {
+   "id": "chatgpt-images-2-6",
+   "role": "作る",
+   "service": "ChatGPT",
+   "title": "画像生成「ChatGPT Images 2.6」(11/4)",
+   "summary": "OpenAI公式に「Introducing Images 2.6」のページとシステムカードがあります。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。編集時のディテール保持の改善などとする先週の情報は、公式本文では未確認です。",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Introducing Images 2.6(OpenAI)",
+     "url": "https://openai.com/index/introducing-images-2-6/"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-15"
+  },
+  {
+   "id": "gemini-4-carbon",
+   "role": "調べる",
+   "service": "Gemini",
+   "title": "「Gemini 4 Carbon」の提供開始",
+   "summary": "Google公式の日本語ブログに「Gemini 4 Carbon の提供を開始」と題するページがあります。先週は「未確認」としていた項目です。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "日本語の公式ブログに掲載されていますが、提供範囲の詳細は本文を読めておらず確認できていません。",
+   "links": [
+    {
+     "label": "Gemini 4 Carbon の提供を開始(Google 公式ブログ)",
+     "url": "https://blog.google/intl/ja-jp/company-news/technology/gemini-4-carbon/"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-15"
+  },
+  {
+   "id": "gpt-6-1-terra",
+   "role": "代わりに動く",
+   "service": "ChatGPT / OpenAI",
+   "title": "「GPT-6.1 Terra」",
+   "summary": "OpenAI公式に「Introducing GPT-6.1 Terra」のページがあります。先週は「未確認」としていた項目です。開発者コミュニティの投稿題には「fast and capable computer use」とありますが、公式本文は読めていません。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Introducing GPT-6.1 Terra(OpenAI)",
+     "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-15"
+  },
+  {
+   "id": "gemini-task-automation-japan",
+   "role": "代わりに動く",
+   "service": "Gemini",
+   "title": "Geminiのタスク自動化(食事注文・配車・予約の代行)の提供地域に日本が追加",
+   "summary": "「日本が追加された」と報じているのは個人運営のガジェットサイト1件のみ(リンクは載せません)。なお、Google公式には「複数ステップのタスクをGeminiに任せる」機能の英語ページと、日本語の11月Pixel Dropのページがありますが、本文は読めておらず、日本での提供開始は確認できていません。(2週目の確認でも、公式の本文では日本での提供開始は確認できませんでした。)",
+   "japan": "日本が含まれるかは、公式の本文では未確認です。",
+   "links": [
+    {
+     "label": "Let Gemini handle your multi-step daily tasks on Android(Google 公式ブログ・英語)",
+     "url": "https://blog.google/innovation-and-ai/products/gemini-app/android-multi-step-tasks/"
+    },
+    {
+     "label": "11月のPixel Drop(Google 公式ブログ)",
+     "url": "https://blog.google/intl/ja-jp/products/devices-services/november-2026-pixel-drop/"
+    }
+   ],
+   "status": "待機(報道1件のみ)",
+   "first_seen": "2026-11-15"
+  }
+ ]
+}
