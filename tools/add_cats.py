@@ -15,23 +15,26 @@ def apply(s):
     return band(s,'<main>' in s)
 BAND='#f3f6f8'
 def band(s,inmain):
-    # 5分類とメニュー(タブ)を、薄い色の帯でまとめる(「ここがメイン」の目印)。何度実行しても同じ結果になる。
-    s=re.sub(r'<div id="band"[^>]*>','',s); s=s.replace('</div><!--/band-->','')
+    # 5分類とメニュー(タブ)を、薄い色の帯でまとめる(「ここがメイン」の目印)。5分類の帯とメニューの帯の間は、白い余白で切り離す。何度実行しても同じ結果になる。
+    s=re.sub(r'<div id="(?:band|catsband|tabsband)"[^>]*>','',s)
+    for k in ('band','catsband','tabsband'): s=s.replace('</div><!--/%s-->'%k,'')
     a=s.find('<div id="cats"'); n=s.find('<nav',a); e=s.find('</nav>',n)+6
     assert a>=0 and n>a and e>n
     nav=s[n:e]
     if inmain: nav=nav.replace('margin:0 -20px 16px','margin:0 -20px',1)
-    st='background:%s;margin:0 -20px;padding:10px 20px 0'%BAND if inmain else 'background:%s;padding:10px 0 0'%BAND
-    # 下段メニュー(目的から選ぶ/最初の7日間 など)がある頁は、それも帯に入れる
-    if inmain and s[e:].startswith('<div id="subtabs"'):  # トップの下段メニュー(総評 / 代表的な動き)
-        e2=s.find('<!--/subtabs-->',e)+len('<!--/subtabs-->')
-        return s[:a]+'<div id="band" style="%s">'%st+s[a:n]+vline(nav)+s[e:e2]+'</div><!--/band-->'+s[e2:]
-    m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0 20px"><div style="display:flex;(?:flex-wrap:wrap;)?gap:',s[e:])
-    if m:
-        k=s.find('</div></div>',e)+12; e2=k
-    else: e2=e
-    out=s[:a]+'<div id="band" style="%s">'%st+s[a:n]+vline(nav)+snfit(vline(s[e:e2]))+'</div><!--/band-->'+s[e2:]
-    if inmain:  # トップは下段メニューがない。帯の下の余白を他頁にそろえ、総評の見出しは他頁の本文と同じ高さにする
+    if inmain and s[e:].startswith('<div id="subtabs"'):  # トップの下段メニュー(総評 / 代表的な動き / 発表済み変更点)
+        e2=s.find('<!--/subtabs-->',e)+len('<!--/subtabs-->'); sub=s[e:e2]
+    else:
+        m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0 20px"><div style="display:flex;(?:flex-wrap:wrap;)?gap:',s[e:])
+        e2=s.find('</div></div>',e)+12 if m else e
+        sub=snfit(vline(s[e:e2]))
+    cs='background:%s;margin:0 -20px;padding:10px 20px 0'%BAND if inmain else 'background:%s;padding:10px 0 0'%BAND
+    ts='background:%s;margin:12px -20px 0;padding:0 20px'%BAND if inmain else 'background:%s;margin:12px 0 0'%BAND
+    out=(s[:a]+'<div id="band">'
+         +'<div id="catsband" style="%s">'%cs+s[a:n]+'</div><!--/catsband-->'
+         +'<div id="tabsband" style="%s">'%ts+vline(nav)+sub+'</div><!--/tabsband-->'
+         +'</div><!--/band-->'+s[e2:])
+    if inmain:
         out=re.sub(r'(<!--/band-->\s*(?:<div id="pane-sohyo">)?<h2 style=")margin-top:\d+px',r'\1margin-top:28px',out,count=1)
     return out
 def snfit(t):
