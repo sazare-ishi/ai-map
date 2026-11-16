@@ -27,7 +27,16 @@ def band(s,inmain):
     if m:
         k=s.find('</div></div>',e)+12; e2=k
     else: e2=e
-    return s[:a]+'<div id="band" style="%s">'%st+s[a:n]+nav+s[e:e2]+'</div><!--/band-->'+s[e2:]
+    return s[:a]+'<div id="band" style="%s">'%st+s[a:n]+vline(nav)+vline(s[e:e2])+'</div><!--/band-->'+s[e2:]
+VL=';padding-left:10px;background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat'
+def vline(t):
+    # 並んだ選択肢の間に、細い縦線を入れる(2つ目以降の左側)。何度実行しても同じ結果になる。
+    t=t.replace(VL,'')
+    k=[0]
+    def f(m):
+        k[0]+=1
+        return m.group(0) if k[0]==1 else m.group(1)+VL+'"'
+    return re.sub(r'(<a href="[^"]*" style="[^"]*)"',f,t)
 if __name__=='__main__':
     for f in ['index','start7','setup','templates','checklist','tips','zukan-link','zukan-video','zukan-slides','zukan-ai','zukan-agent','zukan-image','zukan-organize']:
         p='docs/%s.html'%f; s=open(p).read(); s=apply(s); open(p,'w').write(s)
