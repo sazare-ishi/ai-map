@@ -9,6 +9,7 @@ def apply(s):
     # 前回の入れ物・メニュー・スクリプトを外す
     s=re.sub(r'<div id="subtabs".*?</div><!--/subtabs-->','',s,flags=re.S)
     s=re.sub(r'<script id="tabscript">.*?</script>','',s,flags=re.S)
+    s=re.sub(r'<style id="tabstyle">.*?</style>','',s,flags=re.S)
     s=re.sub(r'<div id="pane-(sohyo|ugoki|shin)"[^>]*>','',s); s=s.replace('</div><!--/pane-->','')
     # 前回の「発表済み変更点」の欄を、元の位置(「代表的な動き」の見出しの前)にもどす
     m=re.search(r'<!--up-->.*?<!--/up-->',s,flags=re.S)
@@ -23,12 +24,12 @@ def apply(s):
     last=s.rfind('</article>'); assert last>h
     e=last+len('</article>')
     if has_up:
-        up=s[u:h].replace('<details id="upcoming" ','<details id="upcoming" open ',1)
+        up=s[u:h]
     else:
         up='<p style="color:#64717a">いまのところ、発表済みで、まだ実施されていない変更はありません。</p>'
-    s=(s[:a]+'<div id="pane-sohyo">'+s[a:u]+'</div><!--/pane-->'
-       +'<div id="pane-ugoki" hidden style="margin-top:10px">'+s[h:e]+'</div><!--/pane-->'
-       +'<div id="pane-shin" hidden style="margin-top:10px">'+up+'</div><!--/pane-->'+s[e:])
+    s=(s[:a]+'<div id="pane-sohyo" style="margin-top:28px">'+s[a:u]+'</div><!--/pane-->'
+       +'<div id="pane-ugoki" hidden style="margin-top:28px">'+s[h:e]+'</div><!--/pane-->'
+       +'<div id="pane-shin" hidden style="margin-top:28px">'+up+'</div><!--/pane-->'+s[e:])
     # 下段メニュー(帯の中、上段メニューの下)
     tabs=('<div id="subtabs" style="display:flex;gap:16px;justify-content:center;border-bottom:0.5px solid #dfe5e9">'
           '<a href="#sohyo" data-tab="sohyo" style="%s">総評</a><a href="#ugoki" data-tab="ugoki" data-v="1" style="%s">代表的な動き</a><a href="#shin" data-tab="shin" data-v="1" style="%s">発表済み変更点(未実施分)</a></div><!--/subtabs-->')%(ON,OFF+V,OFF+V)
@@ -38,7 +39,10 @@ def apply(s):
         'var L=[].slice.call(document.querySelectorAll("#subtabs a"));var ON=%r,OFF=%r,V=%r;'
         'function show(k){if(!T[k])k="sohyo";for(var i in T)T[i].hidden=(i!==k);L.forEach(function(a){a.setAttribute("style",(a.getAttribute("data-tab")===k?ON:OFF)+(a.getAttribute("data-v")?V:""))})}'
         'L.forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var k=a.getAttribute("data-tab");show(k);try{history.replaceState(null,"","#"+k)}catch(x){}})});'
-        'show((location.hash||"").slice(1))})();</script>')%(ON,OFF,V)
-    return s.replace('</main>',js+'</main>',1)
+        'show((location.hash||"").slice(1));window.addEventListener("hashchange",function(){show((location.hash||"").slice(1))})})();</script>')%(ON,OFF,V)
+    css=('<style id="tabstyle">#pane-ugoki>h2{display:none}'
+         '#pane-sohyo>h2{font-size:0!important;margin:0 0 12px!important;padding:0!important;border:0!important;font-weight:400}'
+         '#pane-sohyo>h2 span{font-size:12px!important}#upcoming>div:first-child{margin-top:0!important}</style>')
+    return s.replace('</main>',css+js+'</main>',1)
 if __name__=='__main__':
     s=open(P).read(); open(P,'w').write(apply(s))
