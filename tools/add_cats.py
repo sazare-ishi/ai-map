@@ -16,21 +16,29 @@ def apply(s):
 BAND='#f3f6f8'
 def band(s,inmain):
     # 5分類とメニュー(タブ)を、薄い色の帯でまとめる(「ここがメイン」の目印)。5分類の帯とメニューの帯の間は、白い余白で切り離す。何度実行しても同じ結果になる。
+    s=re.sub(r'<style id="bandstyle">.*?</style>','',s,flags=re.S)
     s=re.sub(r'<div id="(?:band|catsband|tabsband)"[^>]*>','',s)
     for k in ('band','catsband','tabsband'): s=s.replace('</div><!--/%s-->'%k,'')
     a=s.find('<div id="cats"'); n=s.find('<nav',a); e=s.find('</nav>',n)+6
     assert a>=0 and n>a and e>n
     nav=s[n:e]
-    if inmain: nav=nav.replace('margin:0 -20px 16px','margin:0 -20px',1)
+    # メニューの幅: 最大640pxの中を、端から端まで使う(余白なし)。文字は各タブの真ん中にそろえる
+    nst=('display:flex;gap:0;margin:0 -20px;padding:0;border-bottom:1px solid #dfe5e9' if inmain
+         else 'display:flex;gap:0;max-width:640px;margin:0 auto;padding:0;box-sizing:border-box;border-bottom:1px solid #dfe5e9')
+    nav=re.sub(r'^<nav style="[^"]*"','<nav style="%s"'%nst,nav,count=1)
+    nav=re.sub(r'(<a href="[^"]*" style="[^"]*?)(;?text-align:center)?;?"',lambda m:m.group(1)+';text-align:center"',nav)
     if inmain and s[e:].startswith('<div id="subtabs"'):  # トップの下段メニュー(総評 / 代表的な動き / 発表済み変更点)
         e2=s.find('<!--/subtabs-->',e)+len('<!--/subtabs-->'); sub=s[e:e2]
     else:
         m=re.match(r'\s*<div style="max-width:640px;margin:0 auto;padding:0(?: 20px)?"><div style="display:flex;(?:flex-wrap:wrap;)?gap:',s[e:])
         e2=s.find('</div></div>',e)+12 if m else e
         sub=fullw(snfit(vline(s[e:e2])))
+        sub=sub.replace('max-width:640px;margin:0 auto;padding:0 20px','max-width:640px;margin:0 auto;padding:0;box-sizing:border-box',1)
     cs='background:%s;margin:0 -20px;padding:10px 20px 0'%BAND if inmain else 'background:%s;padding:10px 0 0'%BAND
     ts='background:%s;margin:12px -20px 0;padding:0 20px'%BAND if inmain else 'background:%s;margin:12px 0 0'%BAND
-    out=(s[:a]+'<div id="band">'
+    css=('<style id="bandstyle">@media(min-width:681px){#tabsband>nav,#tabsband>#subtabs{margin-left:0!important;margin-right:0!important}#catsband #cats{padding-left:20px!important;padding-right:20px!important}}</style>')
+    if not inmain: css=''
+    out=(s[:a]+css+'<div id="band" style="font-family:\'Noto Sans JP\',\'Hiragino Kaku Gothic ProN\',\'Yu Gothic\',Meiryo,sans-serif">'
          +'<div id="catsband" style="%s">'%cs+s[a:n]+'</div><!--/catsband-->'
          +'<div id="tabsband" style="%s">'%ts+vline(nav)+sub+'</div><!--/tabsband-->'
          +'</div><!--/band-->'+s[e2:])
@@ -56,7 +64,7 @@ def snfit(t):
         v=';background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat' if k[0]>1 else ''
         return m.group(1)+'padding:10px 3px 8px;font-size:min(12px,calc((100vw - 70px)/31.5));line-height:1.4;text-decoration:none;color:'+col+';'+act+'white-space:nowrap;flex:1 1 auto;text-align:center'+v+'"'
     return re.sub(r'(<a href="[^"]*" style=")([^"]*)"',f,t)
-VL=';padding-left:10px;background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat'
+VL=';background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat'
 def vline(t):
     # 並んだ選択肢の間に、細い縦線を入れる(2つ目以降の左側)。何度実行しても同じ結果になる。
     t=t.replace(VL,'')
