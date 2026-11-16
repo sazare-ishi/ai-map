@@ -32,15 +32,19 @@ def band(s,inmain):
         out=re.sub(r'(<!--/band-->\s*<h2 style=")margin-top:\d+px',r'\1margin-top:28px',out,count=1)
     return out
 def snfit(t):
-    # 学ぶ側の5つの選択肢は、横にスクロールさせず、幅に収まるよう折り返す(全部が最初から見えるようにする)
+    # 学ぶ側の5つの選択肢は、横にスクロールさせず、字の大きさを画面幅に合わせて1段に収める
     if 'class="sn"' not in t: return t
-    t=t.replace(';overflow-x:auto','').replace('display:flex;gap:12px','display:flex;flex-wrap:wrap;gap:0',1)
-    t=t.replace(';padding-right:10px;text-align:center;flex:1 1 auto','')
+    t=re.sub(r'display:flex;(?:flex-wrap:wrap;)?gap:\d+px','display:flex;gap:0',t,count=1)
+    t=t.replace(';overflow-x:auto','')
+    k=[0]
     def f(m):
-        x=m.group(1)
-        if VL not in x: x+=VL
-        return x+';padding-right:10px;text-align:center;flex:1 1 auto"'
-    return re.sub(r'(<a href="[^"]*" style="[^"]*)"',f,t)
+        k[0]+=1
+        st=m.group(2)
+        col=re.search(r'color:(#[0-9a-f]+)',st).group(1)
+        act='font-weight:700;border-bottom:2px solid #1f2a30;' if 'font-weight:700' in st else ''
+        v=';background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat' if k[0]>1 else ''
+        return m.group(1)+'padding:10px 3px 8px;font-size:min(12px,calc((100vw - 70px)/31.5));line-height:1.4;text-decoration:none;color:'+col+';'+act+'white-space:nowrap;flex:1 1 auto;text-align:center'+v+'"'
+    return re.sub(r'(<a href="[^"]*" style=")([^"]*)"',f,t)
 VL=';padding-left:10px;background:linear-gradient(#cfd6da,#cfd6da) left 22%/1px 56% no-repeat'
 def vline(t):
     # 並んだ選択肢の間に、細い縦線を入れる(2つ目以降の左側)。何度実行しても同じ結果になる。
