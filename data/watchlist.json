@@ -204,6 +204,62 @@
    ],
    "status": "待機(報道1件のみ)",
    "first_seen": "2026-11-15"
+  },
+  {
+   "id": "tasks-in-gemini",
+   "role": "代わりに動く",
+   "service": "Gemini",
+   "title": "「Tasks in Gemini」: Geminiが手順をまたぐ作業を進める機能(旧「Gemini Spark」)。日本を含む6カ国で無料提供(11/19)",
+   "summary": "Google公式ブログに「How to use Tasks in Gemini for personal assistance」のページがあります。ITmedia NEWSは11月19日に、日本を含む6カ国で無料提供と報じています。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "公式本文では未確認です(報道には日本を含むとの記載)。",
+   "links": [
+    {
+     "label": "How to use Tasks in Gemini for personal assistance(Google 公式ブログ)",
+     "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+    },
+    {
+     "label": "ITmedia NEWSの報道",
+     "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003319/"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-23"
+  },
+  {
+   "id": "gemini-4-neon",
+   "role": "調べる",
+   "service": "Gemini",
+   "title": "新モデル「Gemini 4 Neon」(11月下旬ごろ)",
+   "summary": "Google公式ブログに「Introducing Gemini 4 Neon」のページがあります。窓の杜も報じています。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、詳細・日本での提供範囲は確認できていません。",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Introducing Gemini 4 Neon(Google 公式ブログ・英語)",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+    },
+    {
+     "label": "窓の杜の報道",
+     "url": "https://forest.watch.impress.co.jp/docs/news/2157693.html"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-23"
+  },
+  {
+   "id": "copilot-ignite-2026",
+   "role": "整理する",
+   "service": "Microsoft Copilot",
+   "title": "Microsoft Ignite(11/17)でのCopilotの発表",
+   "summary": "Microsoft公式ブログに「Copilot at Microsoft Ignite: Expanding what's possible with intelligence built for work」のページがあります(11月17日付)。公式ページの存在とタイトルは検索結果で確認できましたが、本文は読めておらず、個別の機能・日本での提供範囲は確認できていません。",
+   "japan": "確認できていません。",
+   "links": [
+    {
+     "label": "Copilot at Microsoft Ignite(Microsoft Copilot Blog・英語)",
+     "url": "https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/"
+    }
+   ],
+   "status": "待機(公式ページの本文を確認できていない)",
+   "first_seen": "2026-11-23"
   }
  ]
 }
