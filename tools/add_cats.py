@@ -26,7 +26,8 @@ def band(s,inmain):
     nst=('display:flex;gap:0;margin:0 -20px;padding:0;' if inmain
          else 'display:flex;gap:0;max-width:640px;margin:0 auto;padding:0;box-sizing:border-box;')
     nav=re.sub(r'^<nav style="[^"]*"','<nav style="%s"'%nst,nav,count=1)
-    nav=re.sub(r'(<a href="[^"]*" style="[^"]*?)(;?text-align:center)?;?"',lambda m:m.group(1)+';text-align:center"',nav)
+    nav=nav.replace(';text-align:center','')
+    nav=re.sub(r'(<a href="[^"]*" style="[^"]*?);?"',lambda m:m.group(1)+';text-align:center"',nav)
     if inmain and s[e:].startswith('<div id="subtabs"'):  # トップの下段メニュー(総評 / 代表的な動き / 発表済み変更点)
         e2=s.find('<!--/subtabs-->',e)+len('<!--/subtabs-->'); sub=s[e:e2]
     else:
